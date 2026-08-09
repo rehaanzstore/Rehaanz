@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>REHAANZ | Beauty & Lifestyle</title>
 
 <style>
@@ -11,7 +10,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
 }
 
 body{
@@ -19,15 +18,11 @@ body{
     color:#222;
 }
 
-/* Header */
 header{
-    background:#fff;
+    background:white;
     padding:20px;
     text-align:center;
     border-bottom:1px solid #eee;
-    position:sticky;
-    top:0;
-    z-index:10;
 }
 
 .logo{
@@ -42,7 +37,6 @@ header{
     margin-top:5px;
 }
 
-/* Hero */
 .hero{
     padding:45px 20px;
     text-align:center;
@@ -50,7 +44,7 @@ header{
 }
 
 .hero h1{
-    font-size:36px;
+    font-size:35px;
     margin-bottom:10px;
 }
 
@@ -59,16 +53,15 @@ header{
     margin-bottom:25px;
 }
 
-.hero button{
+.hero a{
+    display:inline-block;
     background:#222;
     color:white;
-    border:none;
+    text-decoration:none;
     padding:13px 28px;
     border-radius:30px;
-    font-size:15px;
 }
 
-/* Search */
 .search{
     padding:20px;
     text-align:center;
@@ -84,23 +77,6 @@ header{
     font-size:15px;
 }
 
-/* Categories */
-.categories{
-    display:flex;
-    gap:10px;
-    overflow-x:auto;
-    padding:5px 20px 20px;
-}
-
-.categories button{
-    white-space:nowrap;
-    border:1px solid #ddd;
-    background:white;
-    padding:10px 18px;
-    border-radius:25px;
-}
-
-/* Section */
 .section-title{
     padding:10px 20px 20px;
 }
@@ -109,7 +85,6 @@ header{
     font-size:24px;
 }
 
-/* Products */
 .products{
     display:grid;
     grid-template-columns:repeat(2,1fr);
@@ -121,32 +96,38 @@ header{
     background:white;
     border-radius:18px;
     padding:12px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.06);
-    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
 }
 
 .card img{
     width:100%;
     height:180px;
     object-fit:contain;
-    background:#f8f8f8;
     border-radius:13px;
+    background:#f7f7f7;
 }
 
 .card h3{
     font-size:15px;
     margin:12px 3px 6px;
-}
-
-.price{
-    font-size:17px;
-    font-weight:bold;
-    margin:5px 3px;
+    line-height:1.4;
 }
 
 .rating{
-    font-size:13px;
     color:#777;
+    font-size:13px;
+    margin:5px 3px;
+}
+
+.price{
+    font-size:18px;
+    font-weight:bold;
+    margin:8px 3px;
+}
+
+.commission{
+    color:#008f5a;
+    font-size:12px;
     margin:5px 3px;
 }
 
@@ -162,7 +143,6 @@ header{
     font-size:14px;
 }
 
-/* Footer */
 footer{
     background:#222;
     color:white;
@@ -179,29 +159,38 @@ footer p{
     font-size:13px;
     margin-top:8px;
 }
+
+@media(max-width:400px){
+    .products{
+        grid-template-columns:1fr 1fr;
+        padding:0 12px 30px;
+        gap:10px;
+    }
+
+    .card{
+        padding:9px;
+    }
+
+    .card img{
+        height:150px;
+    }
+}
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
     <div class="logo">REHAANZ</div>
     <div class="tagline">Beauty • Fashion • Lifestyle</div>
 </header>
 
-
-<!-- HERO -->
 <section class="hero">
     <h1>Discover Your Style</h1>
     <p>Beauty products & amazing deals, all in one place.</p>
-    <button onclick="document.getElementById('products').scrollIntoView()">
-        SHOP NOW
-    </button>
+    <a href="#products">SHOP NOW</a>
 </section>
 
-
-<!-- SEARCH -->
 <div class="search">
     <input
         type="text"
@@ -211,40 +200,39 @@ footer p{
     >
 </div>
 
-
-<!-- CATEGORIES -->
-<div class="categories">
-    <button>All</button>
-    <button>Face Care</button>
-    <button>Beauty</button>
-    <button>Fashion</button>
-    <button>Best Deals</button>
-</div>
-
-
-<!-- PRODUCTS -->
 <div class="section-title">
     <h2>✨ Face Care</h2>
 </div>
 
 <div class="products" id="products">
 
-
     <!-- PRODUCT 1 -->
     <div class="card">
 
-        <img src="https://via.placeholder.com/300x300?text=Face+Wash">
+        <img src="product1.jpg" alt="Mamaearth Multani Mitti Face Wash">
 
-        <h3>Premium Face Wash</h3>
+        <h3>
+            Mamaearth Multani Mitti Face Wash
+            50 ml Pack of 3
+        </h3>
 
-        <div class="rating">⭐ 4.3 • Face Care</div>
+        <div class="rating">
+            ⭐ 4.1 (4,375)
+        </div>
 
-        <div class="price">₹299</div>
+        <div class="price">
+            ₹296
+        </div>
+
+        <div class="commission">
+            ✨ Affiliate Product • 8% Commission
+        </div>
 
         <a
             class="buy"
-            href="PASTE-YOUR-MEESHO-LINK-HERE"
+            href="https://www.meesho.com/af_invite/462588404:instagram_stories:7914145?p_id=498232777&ext_id=88muvd&utm_source=instagram_stories"
             target="_blank"
+            rel="noopener noreferrer"
         >
             BUY NOW
         </a>
@@ -255,62 +243,30 @@ footer p{
     <!-- PRODUCT 2 -->
     <div class="card">
 
-        <img src="https://via.placeholder.com/300x300?text=Face+Wash">
+        <img src="product2.jpg" alt="Mamaearth Vitamin C Face Wash">
 
-        <h3>Daily Face Wash</h3>
+        <h3>
+            Mamaearth Vitamin C Face Wash
+            with Vitamin C & Turmeric
+        </h3>
 
-        <div class="rating">⭐ 4.2 • Face Care</div>
+        <div class="rating">
+            ⭐ 4.1 (22,364)
+        </div>
 
-        <div class="price">₹249</div>
+        <div class="price">
+            ₹232
+        </div>
 
-        <a
-            class="buy"
-            href="PASTE-YOUR-MEESHO-LINK-HERE"
-            target="_blank"
-        >
-            BUY NOW
-        </a>
-
-    </div>
-
-
-    <!-- PRODUCT 3 -->
-    <div class="card">
-
-        <img src="https://via.placeholder.com/300x300?text=Face+Wash">
-
-        <h3>Glow Face Wash</h3>
-
-        <div class="rating">⭐ 4.4 • Beauty</div>
-
-        <div class="price">₹199</div>
+        <div class="commission">
+            ✨ Affiliate Product • 8% Commission
+        </div>
 
         <a
             class="buy"
-            href="PASTE-YOUR-MEESHO-LINK-HERE"
+            href="https://www.meesho.com/af_invite/462588404:instagram_stories:7915113?p_id=449355800&ext_id=7fj95k&utm_source=instagram_stories"
             target="_blank"
-        >
-            BUY NOW
-        </a>
-
-    </div>
-
-
-    <!-- PRODUCT 4 -->
-    <div class="card">
-
-        <img src="https://via.placeholder.com/300x300?text=Face+Wash">
-
-        <h3>Herbal Face Wash</h3>
-
-        <div class="rating">⭐ 4.1 • Beauty</div>
-
-        <div class="price">₹179</div>
-
-        <a
-            class="buy"
-            href="PASTE-YOUR-MEESHO-LINK-HERE"
-            target="_blank"
+            rel="noopener noreferrer"
         >
             BUY NOW
         </a>
@@ -319,40 +275,33 @@ footer p{
 
 </div>
 
-
-<!-- FOOTER -->
 <footer>
     <h2>REHAANZ</h2>
     <p>Discover • Shop • Enjoy</p>
     <p>© 2026 Rehaanz</p>
 </footer>
 
-
 <script>
 
 function searchProducts(){
 
-    let input =
-        document.getElementById("searchBox")
+    let input = document
+        .getElementById("searchBox")
         .value
         .toLowerCase();
 
-    let products =
-        document.querySelectorAll(".card");
+    let products = document
+        .querySelectorAll(".card");
 
     products.forEach(function(product){
 
-        let name =
-            product.querySelector("h3")
+        let name = product
+            .querySelector("h3")
             .innerText
             .toLowerCase();
 
-        if(name.includes(input)){
-            product.style.display = "block";
-        }
-        else{
-            product.style.display = "none";
-        }
+        product.style.display =
+            name.includes(input) ? "block" : "none";
 
     });
 }
