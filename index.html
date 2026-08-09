@@ -1,134 +1,643 @@
-<!-- PRODUCT 1 -->
-<div class="product">
-    <img src="ms_1.jpg" alt="Mamaearth Beetroot Gentle Face Wash">
+<!DOCTYPE html>
+<html lang="en">
 
-    <h2>Mamaearth Beetroot Gentle Face Wash</h2>
+<head>
 
-    <p>Beetroot & Hyaluronic Acid – Hydrate & Glow</p>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <h3>₹241</h3>
+<title>REHAANZ | Beauty & Lifestyle</title>
 
-    <a href="https://www.meesho.com/af_invite/462588404:facebook:7919112?p_id=389984138&ext_id=6g6poq&utm_source=facebook"
-       target="_blank">
-       Buy Now
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#faf8f6;
+    color:#222;
+}
+
+/* HEADER */
+
+header{
+    background:white;
+    padding:20px;
+    text-align:center;
+    border-bottom:1px solid #eee;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:bold;
+    letter-spacing:4px;
+}
+
+.tagline{
+    color:#777;
+    font-size:13px;
+    margin-top:5px;
+}
+
+/* HERO */
+
+.hero{
+    padding:45px 20px;
+    text-align:center;
+    background:linear-gradient(135deg,#f7e8e8,#f7f3ee);
+}
+
+.hero h1{
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    color:#666;
+    margin-bottom:25px;
+}
+
+.hero a{
+    display:inline-block;
+    background:#222;
+    color:white;
+    text-decoration:none;
+    padding:13px 28px;
+    border-radius:30px;
+}
+
+/* SEARCH */
+
+.search{
+    padding:20px;
+    text-align:center;
+}
+
+.search input{
+    width:90%;
+    max-width:500px;
+    padding:14px 18px;
+    border:1px solid #ddd;
+    border-radius:30px;
+    outline:none;
+    font-size:15px;
+}
+
+/* SECTION */
+
+.section-title{
+    padding:10px 20px 20px;
+}
+
+.section-title h2{
+    font-size:24px;
+}
+
+/* PRODUCTS */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    padding:0 20px 40px;
+}
+
+.card{
+    background:white;
+    border-radius:18px;
+    padding:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
+}
+
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:contain;
+    border-radius:13px;
+    background:#f7f7f7;
+}
+
+.card h3{
+    font-size:15px;
+    margin:12px 3px 6px;
+    line-height:1.4;
+}
+
+.rating{
+    color:#777;
+    font-size:13px;
+    margin:5px 3px;
+}
+
+.price{
+    font-size:18px;
+    font-weight:bold;
+    margin:8px 3px;
+}
+
+.commission{
+    color:#008f5a;
+    font-size:12px;
+    margin:5px 3px;
+}
+
+.buy{
+    display:block;
+    text-align:center;
+    background:#222;
+    color:white;
+    text-decoration:none;
+    padding:11px;
+    border-radius:10px;
+    margin-top:10px;
+    font-size:14px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:30px 20px;
+}
+
+footer h2{
+    letter-spacing:3px;
+}
+
+footer p{
+    color:#bbb;
+    font-size:13px;
+    margin-top:8px;
+}
+
+/* MOBILE */
+
+@media(max-width:400px){
+
+    .products{
+        grid-template-columns:1fr 1fr;
+        padding:0 12px 30px;
+        gap:10px;
+    }
+
+    .card{
+        padding:9px;
+    }
+
+    .card img{
+        height:150px;
+    }
+
+    .card h3{
+        font-size:14px;
+    }
+
+    .price{
+        font-size:17px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        REHAANZ
+    </div>
+
+    <div class="tagline">
+        Beauty • Fashion • Lifestyle
+    </div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <h1>
+        Discover Your Style
+    </h1>
+
+    <p>
+        Beauty products & amazing deals, all in one place.
+    </p>
+
+    <a href="#products">
+        SHOP NOW
     </a>
+
+</section>
+
+
+<!-- SEARCH -->
+
+<div class="search">
+
+    <input
+        type="text"
+        id="searchBox"
+        placeholder="🔍 Search products..."
+        onkeyup="searchProducts()"
+    >
+
+</div>
+
+
+<!-- PRODUCT SECTION -->
+
+<div class="section-title">
+
+    <h2>
+        ✨ Face Care
+    </h2>
+
+</div>
+
+
+<div class="products" id="products">
+
+
+<!-- PRODUCT 1 -->
+
+<div class="card">
+
+    <img
+        src="product1.jpg"
+        alt="Mamaearth Beetroot Gentle Face Wash"
+    >
+
+    <h3>
+        Mamaearth Beetroot Gentle Face Wash
+        with Beetroot & Hyaluronic Acid
+    </h3>
+
+    <div class="rating">
+        ⭐ Hydrate & Glow
+    </div>
+
+    <div class="price">
+        ₹241
+    </div>
+
+    <div class="commission">
+        ✨ Affiliate Product • 8% Commission
+    </div>
+
+    <a
+        class="buy"
+        href="https://www.meesho.com/af_invite/462588404:facebook:7919112?p_id=389984138&ext_id=6g6poq&utm_source=facebook"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        BUY NOW
+    </a>
+
 </div>
 
 
 <!-- PRODUCT 2 -->
-<div class="product">
-    <img src="ms_2.jpg" alt="Mamaearth Vitamin C Daily Glow Face Cream">
 
-    <h2>Mamaearth Vitamin C Daily Glow Face Cream</h2>
+<div class="card">
 
-    <p>Vitamin C & Turmeric – Daily Glow</p>
+    <img
+        src="product2.jpg"
+        alt="Mamaearth Vitamin C Daily Glow Face Cream"
+    >
 
-    <h3>₹228</h3>
+    <h3>
+        Mamaearth Vitamin C Daily Glow
+        Face Cream with Vitamin C
+    </h3>
 
-    <a href="https://www.meesho.com/af_invite/462588404:facebook:7919127?p_id=195110069&ext_id=385vw5&utm_source=facebook"
-       target="_blank">
-       Buy Now
+    <div class="rating">
+        ⭐ For Skin Illumination
+    </div>
+
+    <div class="price">
+        ₹228
+    </div>
+
+    <div class="commission">
+        ✨ Affiliate Product • 8% Commission
+    </div>
+
+    <a
+        class="buy"
+        href="https://www.meesho.com/af_invite/462588404:facebook:7919127?p_id=195110069&ext_id=385vw5&utm_source=facebook"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        BUY NOW
     </a>
+
 </div>
 
 
 <!-- PRODUCT 3 -->
-<div class="product">
-    <img src="ms_3.jpg" alt="Mamaearth Vitamin C Face Wash">
 
-    <h2>Mamaearth Vitamin C Face Wash</h2>
+<div class="card">
 
-    <p>Vitamin C & Turmeric – Skin Illumination</p>
+    <img
+        src="product3.jpg"
+        alt="Mamaearth Vitamin C Face Wash"
+    >
 
-    <h3>₹314</h3>
+    <h3>
+        Mamaearth Vitamin C Face Wash
+        with Vitamin C & Turmeric
+    </h3>
 
-    <a href="https://www.meesho.com/af_invite/462588404:facebook:7919138?p_id=142278369&ext_id=2cpiox&utm_source=facebook"
-       target="_blank">
-       Buy Now
+    <div class="rating">
+        ⭐ 4.3 ★
+    </div>
+
+    <div class="price">
+        ₹314
+    </div>
+
+    <div class="commission">
+        ✨ Affiliate Product • 8% Commission
+    </div>
+
+    <a
+        class="buy"
+        href="https://www.meesho.com/af_invite/462588404:facebook:7919138?p_id=142278369&ext_id=2cpiox&utm_source=facebook"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        BUY NOW
     </a>
+
 </div>
 
 
 <!-- PRODUCT 4 -->
-<div class="product">
-    <img src="ms_4.jpg" alt="Mamaearth Multani Mitti Face Wash">
 
-    <h2>Mamaearth Multani Mitti Face Wash</h2>
+<div class="card">
 
-    <p>Multani Mitti Face Wash – Pack of 3</p>
+    <img
+        src="product4.jpg"
+        alt="Mamaearth Multani Mitti Face Wash Pack of 3"
+    >
 
-    <h3>₹296</h3>
+    <h3>
+        Mamaearth Multani Mitti Face Wash
+        50 ml Pack of 3
+    </h3>
 
-    <a href="https://www.meesho.com/af_invite/462588404:facebook:7919147?p_id=498232776&ext_id=88muvc&utm_source=facebook"
-       target="_blank">
-       Buy Now
+    <div class="rating">
+        ⭐ 4.1 ★
+    </div>
+
+    <div class="price">
+        ₹296
+    </div>
+
+    <div class="commission">
+        ✨ Affiliate Product • 8% Commission
+    </div>
+
+    <a
+        class="buy"
+        href="https://www.meesho.com/af_invite/462588404:facebook:7919147?p_id=498232776&ext_id=88muvc&utm_source=facebook"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        BUY NOW
     </a>
+
 </div>
 
 
 <!-- PRODUCT 5 -->
-<div class="product">
-    <img src="ms_5.jpg" alt="Mamaearth Ubtan Natural Glow Face Wash">
 
-    <h2>Mamaearth Ubtan Natural Glow Face Wash</h2>
+<div class="card">
 
-    <p>Turmeric & Saffron – Natural Glow</p>
+    <img
+        src="product5.jpg"
+        alt="Mamaearth Ubtan Natural Glow Face Wash"
+    >
 
-    <h3>₹236</h3>
+    <h3>
+        Mamaearth Ubtan Natural Glow
+        Face Wash with Turmeric & Saffron
+    </h3>
 
-    <a href="https://www.meesho.com/af_invite/462588404:facebook:7919159?p_id=17602893&ext_id=ahah9&utm_source=facebook"
-       target="_blank">
-       Buy Now
+    <div class="rating">
+        ⭐ 4.2 ★
+    </div>
+
+    <div class="price">
+        ₹236
+    </div>
+
+    <div class="commission">
+        ✨ Affiliate Product • 8% Commission
+    </div>
+
+    <a
+        class="buy"
+        href="https://www.meesho.com/af_invite/462588404:facebook:7919159?p_id=17602893&ext_id=ahah9&utm_source=facebook"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        BUY NOW
     </a>
+
 </div>
 
 
 <!-- PRODUCT 6 -->
-<div class="product">
-    <img src="ms_6.jpg" alt="Mamaearth Vitamin C Face Wash 150ml">
 
-    <h2>Mamaearth Vitamin C Face Wash</h2>
+<div class="card">
 
-    <p>Vitamin C & Turmeric – 150 ml</p>
+    <img
+        src="product6.jpg"
+        alt="Mamaearth Vitamin C Face Wash 150 ml"
+    >
 
-    <h3>₹341</h3>
+    <h3>
+        Mamaearth Vitamin C Face Wash
+        150 ml with Vitamin C & Turmeric
+    </h3>
 
-    <a href="https://www.meesho.com/af_invite/462588404:facebook:7919180?p_id=422747615&ext_id=6zoy5b&utm_source=facebook"
-       target="_blank">
-       Buy Now
+    <div class="rating">
+        ⭐ 4.3 ★
+    </div>
+
+    <div class="price">
+        ₹341
+    </div>
+
+    <div class="commission">
+        ✨ Affiliate Product • 8% Commission
+    </div>
+
+    <a
+        class="buy"
+        href="https://www.meesho.com/af_invite/462588404:facebook:7919180?p_id=422747615&ext_id=6zoy5b&utm_source=facebook"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        BUY NOW
     </a>
+
 </div>
 
 
 <!-- PRODUCT 7 -->
-<div class="product">
-    <img src="ms_7.jpg" alt="Mamaearth Ubtan Face Wash Pack of 2">
 
-    <h2>Mamaearth Ubtan Face Wash</h2>
+<div class="card">
 
-    <p>Ubtan Natural Glow – 100 ml Pack of 2</p>
+    <img
+        src="product7.jpg"
+        alt="Mamaearth Ubtan Face Wash Pack of 2"
+    >
 
-    <h3>₹385</h3>
+    <h3>
+        Mamaearth Ubtan Face Wash
+        100 ml Pack of 2
+    </h3>
 
-    <a href="https://www.meesho.com/af_invite/462588404:facebook:7919199?p_id=381861671&ext_id=6bcmcn&utm_source=facebook"
-       target="_blank">
-       Buy Now
+    <div class="rating">
+        ⭐ 4.3 ★
+    </div>
+
+    <div class="price">
+        ₹385
+    </div>
+
+    <div class="commission">
+        ✨ Affiliate Product • 8% Commission
+    </div>
+
+    <a
+        class="buy"
+        href="https://www.meesho.com/af_invite/462588404:facebook:7919199?p_id=381861671&ext_id=6bcmcn&utm_source=facebook"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        BUY NOW
     </a>
+
 </div>
 
 
 <!-- PRODUCT 8 -->
-<div class="product">
-    <img src="ms_8.jpg" alt="Mamaearth Multani Mitti Oil Balance Face Wash">
 
-    <h2>Mamaearth Multani Mitti Oil Balance Face Wash</h2>
+<div class="card">
 
-    <p>Multani Mitti – Gently Cleanses Excess Oil</p>
+    <img
+        src="product8.jpg"
+        alt="Mamaearth Multani Mitti Oil Balance Face Wash"
+    >
 
-    <h3>₹244</h3>
+    <h3>
+        Mamaearth Multani Mitti Oil Balance
+        Face Wash with Multani Mitti
+    </h3>
 
-    <a href="https://www.meesho.com/af_invite/462588404:facebook:7919218?p_id=295083898&ext_id=4voo6y&utm_source=facebook"
-       target="_blank">
-       Buy Now
+    <div class="rating">
+        ⭐ 4.3 ★
+    </div>
+
+    <div class="price">
+        ₹244
+    </div>
+
+    <div class="commission">
+        ✨ Affiliate Product • 8% Commission
+    </div>
+
+    <a
+        class="buy"
+        href="https://www.meesho.com/af_invite/462588404:facebook:7919218?p_id=295083898&ext_id=4voo6y&utm_source=facebook"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        BUY NOW
     </a>
+
 </div>
+
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h2>
+        REHAANZ
+    </h2>
+
+    <p>
+        Discover • Shop • Enjoy
+    </p>
+
+    <p>
+        © 2026 Rehaanz
+    </p>
+
+</footer>
+
+
+<!-- SEARCH SCRIPT -->
+
+<script>
+
+function searchProducts(){
+
+    let input = document
+        .getElementById("searchBox")
+        .value
+        .toLowerCase();
+
+    let products = document
+        .querySelectorAll(".card");
+
+    products.forEach(function(product){
+
+        let name = product
+            .querySelector("h3")
+            .innerText
+            .toLowerCase();
+
+        if(name.includes(input)){
+
+            product.style.display = "block";
+
+        }else{
+
+            product.style.display = "none";
+
+        }
+
+    });
+
+}
+
+</script>
+
+
+</body>
+
+</html>
