@@ -15,13 +15,16 @@
       color: #FFFFFF;
       font-family: 'Georgia', serif;
       text-align: center;
-      scroll-behavior: smooth;
     }
     
+    html {
+      scroll-behavior: smooth;
+    }
+
     section {
       min-height: 100vh;
-      padding: 50px 20px;
-      display: flex;
+      padding: 60px 20px;
+      display: flex !important;
       flex-direction: column;
       align-items: center;
       justify-content: center;
@@ -152,18 +155,15 @@
     .product-img {
       width: 100%;
       aspect-ratio: 1 / 1;
-      background-color: #FFFFFF;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px dashed rgba(255, 255, 255, 0.4);
       border-radius: 6px;
-      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-
-    .product-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: #FFD700;
     }
 
     .product-info {
@@ -202,20 +202,6 @@
       text-decoration: underline;
       font-size: 0.9rem;
     }
-/* Fix scrolling and section display issue */
-html {
-  scroll-behavior: smooth;
-}
-
-section {
-  display: flex !important;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 60px 20px;
-}
-
   </style>
 </head>
 <body>
@@ -285,16 +271,16 @@ section {
     
     <div class="product-grid">
       <div class="product-card">
-        <div class="product-img"><img src="https://m.media-amazon.com/images/I/51wXkY7AURL._SL1000_.jpg" alt="Himalaya Dark Spot Clearing Face Wash"></div>
+        <div class="product-img">image 1</div>
         <div class="product-info">
           <div class="product-name">Himalaya Dark Spot Clearing Turmeric Face Wash (100ml)</div>
           <div class="rating">rating 4.5 ★</div>
           <div class="price">price - ₹136</div>
         </div>
-        <a href="https://link.amazon/B00SGQINa" target="_blank" class="btn">BUY NOW</a>
+        <a href="https://link.amazon/B00SGQIna" target="_blank" class="btn">BUY NOW</a>
       </div>
       <div class="product-card">
-        <div class="product-img"><img src="https://m.media-amazon.com/images/I/61iVvJ2kRPL._SL1000_.jpg" alt="FoxTale Skin Radiance Mask"></div>
+        <div class="product-img">image 2</div>
         <div class="product-info">
           <div class="product-name">FoxTale De-Tan Face Mask for Glowing Skin (12g)</div>
           <div class="rating">rating 4.0 ★</div>
@@ -303,7 +289,7 @@ section {
         <a href="https://link.amazon/B06z34w5M" target="_blank" class="btn">BUY NOW</a>
       </div>
       <div class="product-card">
-        <div class="product-img"><img src="https://m.media-amazon.com/images/I/61S-+3W1oTL._SL1500_.jpg" alt="Simple Refreshing Facial Wash"></div>
+        <div class="product-img">image 3</div>
         <div class="product-info">
           <div class="product-name">Simple Kind To Skin Refreshing Facial Wash (150ml)</div>
           <div class="rating">rating 4.5 ★</div>
@@ -312,16 +298,16 @@ section {
         <a href="https://link.amazon/B0foOwyqK" target="_blank" class="btn">BUY NOW</a>
       </div>
       <div class="product-card">
-        <div class="product-img"><img src="https://m.media-amazon.com/images/I/61W34wD5IqL._SL1000_.jpg" alt="Himalaya Dark Spot Serum"></div>
+        <div class="product-img">image 4</div>
         <div class="product-info">
           <div class="product-name">Himalaya Dark Spot Clearing Turmeric Face Serum (15ml)</div>
           <div class="rating">rating 4.4 ★</div>
           <div class="price">price - ₹194</div>
         </div>
-        <a href="https://link.amazon/B0j41Qmjl" target="_blank" class="btn">BUY NOW</a>
+        <a href="https://link.amazon/B0J41QmjI" target="_blank" class="btn">BUY NOW</a>
       </div>
       <div class="product-card">
-        <div class="product-img"><img src="https://m.media-amazon.com/images/I/61q3kM2pAnL._SL1000_.jpg" alt="Bio-Collagen Mask"></div>
+        <div class="product-img">image 5</div>
         <div class="product-info">
           <div class="product-name">Bio-Collagen Real Deep Face Mask (Pack of 4)</div>
           <div class="rating">rating 4.6 ★</div>
@@ -330,7 +316,7 @@ section {
         <a href="https://link.amazon/B07Lw2oUA" target="_blank" class="btn">BUY NOW</a>
       </div>
       <div class="product-card">
-        <div class="product-img"><img src="https://m.media-amazon.com/images/I/61fI6y+4YpL._SL1500_.jpg" alt="Cetaphil Gentle Cleanser"></div>
+        <div class="product-img">image 6</div>
         <div class="product-info">
           <div class="product-name">Cetaphil Gentle Skin Hydrating Face Wash Cleanser (118ml)</div>
           <div class="rating">rating 4.3 ★</div>
@@ -339,7 +325,7 @@ section {
         <a href="https://link.amazon/B0fQ00ubj" target="_blank" class="btn">BUY NOW</a>
       </div>
       <div class="product-card">
-        <div class="product-img"><img src="https://m.media-amazon.com/images/I/61nNfI-gInL._SL1000_.jpg" alt="Himalaya Kesar Face Wash"></div>
+        <div class="product-img">image 7</div>
         <div class="product-info">
           <div class="product-name">Himalaya Natural Glow Kesar Face Wash (150ml)</div>
           <div class="rating">rating 4.5 ★</div>
@@ -348,7 +334,7 @@ section {
         <a href="https://link.amazon/B0fy4o1UO" target="_blank" class="btn">BUY NOW</a>
       </div>
       <div class="product-card">
-        <div class="product-img"><img src="https://m.media-amazon.com/images/I/513y+B9vD2L._SL1000_.jpg" alt="Vaseline Gluta-Hya Lotion"></div>
+        <div class="product-img">image 8</div>
         <div class="product-info">
           <div class="product-name">Vaseline Gluta-Hya Dewy Radiance Body Lotion (200ml)</div>
           <div class="rating">rating 4.3 ★</div>
@@ -367,16 +353,16 @@ section {
     
     <div class="product-grid">
       <div class="product-card">
-        <div class="product-img"><img src="https://m.media-amazon.com/images/I/71qV8pL20LL._AC_UL640_QL65_.jpg" alt="Zip Collar Polo Sweatshirt"></div>
+        <div class="product-img">Image11</div>
         <div class="product-info">
           <div class="product-name">Men's Contrast Collar Zip Long Sleeve Polo (Brown)</div>
           <div class="rating">rating 4.5 ★</div>
           <div class="price">price - ₹296</div>
         </div>
-        <a href="https://link.amazon/B0avIUtrz" target="_blank" class="btn">BUY NOW</a>
+        <a href="https://link.amazon/B0avlUtrz" target="_blank" class="btn">BUY NOW</a>
       </div>
       <div class="product-card">
-        <div class="product-img"><img src="https://m.media-amazon.com/images/I/61k9sP-uK7L._AC_UL640_QL65_.jpg" alt="Nautical Blue Polo"></div>
+        <div class="product-img">Image12</div>
         <div class="product-info">
           <div class="product-name">Men's Nautical Blue Slim Fit Polo T-Shirt</div>
           <div class="rating">rating 4.4 ★</div>
@@ -385,7 +371,7 @@ section {
         <a href="https://link.amazon/B00ZzOfNa" target="_blank" class="btn">BUY NOW</a>
       </div>
       <div class="product-card">
-        <div class="product-img"><img src="https://m.media-amazon.com/images/I/71R2oI0fNlL._AC_UL640_QL65_.jpg" alt="DEELMO Linen Shirt"></div>
+        <div class="product-img">Image13</div>
         <div class="product-info">
           <div class="product-name">DEELMO Casual Textured Linen Button Down Shirt (Maroon)</div>
           <div class="rating">rating 4.5 ★</div>
@@ -394,16 +380,16 @@ section {
         <a href="https://link.amazon/B0guVW6MR" target="_blank" class="btn">BUY NOW</a>
       </div>
       <div class="product-card">
-        <div class="product-img"><img src="https://m.media-amazon.com/images/I/61Xp0N1P7VL._AC_UL640_QL65_.jpg" alt="Brooklyn Sleeveless Tee"></div>
+        <div class="product-img">Image14</div>
         <div class="product-info">
           <div class="product-name">Men's Brooklyn Printed Sleeveless Gym T-Shirt</div>
           <div class="rating">rating 4.3 ★</div>
           <div class="price">price - ₹283</div>
         </div>
-        <a href="https://link.amazon/B0cmavyDl" target="_blank" class="btn">BUY NOW</a>
+        <a href="https://link.amazon/B0cmavyDI" target="_blank" class="btn">BUY NOW</a>
       </div>
       <div class="product-card">
-        <div class="product-img"><img src="https://m.media-amazon.com/images/I/51w9f0XJ7-L._AC_UL640_QL65_.jpg" alt="Classic Black Polo"></div>
+        <div class="product-img"> Image15</div>
         <div class="product-info">
           <div class="product-name">Men's Classic Black Solid Polo T-Shirt</div>
           <div class="rating">rating 4.6 ★</div>
@@ -412,7 +398,7 @@ section {
         <a href="https://link.amazon/B0byCqhQ2" target="_blank" class="btn">BUY NOW</a>
       </div>
       <div class="product-card">
-        <div class="product-img"><img src="https://m.media-amazon.com/images/I/61kC8N9yVNL._AC_UL640_QL65_.jpg" alt="Beige Track Pants"></div>
+        <div class="product-img">Image16</div>
         <div class="product-info">
           <div class="product-name">Men's Stylish Beige Striped Loose Track Pants</div>
           <div class="rating">rating 4.4 ★</div>
@@ -421,7 +407,7 @@ section {
         <a href="https://link.amazon/B01zRG5Qc" target="_blank" class="btn">BUY NOW</a>
       </div>
       <div class="product-card">
-        <div class="product-img"><img src="https://m.media-amazon.com/images/I/61Lg0D83A6L._AC_UL640_QL65_.jpg" alt="Cargo Shorts"></div>
+        <div class="product-img">Image17</div>
         <div class="product-info">
           <div class="product-name">Men's Light Grey Multi-Pocket Cargo Shorts</div>
           <div class="rating">rating 4.5 ★</div>
@@ -430,7 +416,7 @@ section {
         <a href="https://link.amazon/B08Nd4qtw" target="_blank" class="btn">BUY NOW</a>
       </div>
       <div class="product-card">
-        <div class="product-img"><img src="https://m.media-amazon.com/images/I/51-mY28S-bL._AC_UL640_QL65_.jpg" alt="Black Track Pants"></div>
+        <div class="product-img">Image18</div>
         <div class="product-info">
           <div class="product-name">Men's Casual Black Loose Drawstring Sweatpants</div>
           <div class="rating">rating 4.5 ★</div>
@@ -439,13 +425,13 @@ section {
         <a href="https://link.amazon/B08v6kCOO" target="_blank" class="btn">BUY NOW</a>
       </div>
       <div class="product-card">
-        <div class="product-img"><img src="https://m.media-amazon.com/images/I/61eO9G00oLL._AC_UL640_QL65_.jpg" alt="Green Cargo Joggers"></div>
+        <div class="product-img"> Image19</div>
         <div class="product-info">
           <div class="product-name">Men's Olive Green Zipper Pocket Cargo Joggers</div>
           <div class="rating">rating 4.4 ★</div>
           <div class="price">price - ₹649</div>
         </div>
-        <a href="https://link.amazon/B0avIUtrz" target="_blank" class="btn">BUY NOW</a>
+        <a href="https://link.amazon/B0b0C1GoZ" target="_blank" class="btn">BUY NOW</a>
       </div>
     </div>
     <a href="#home" class="back-to-top">↑ Back to Categories</a>
@@ -458,7 +444,7 @@ section {
     
     <div class="product-grid">
       <div class="product-card">
-        <div class="product-img"><img src="https://m.media-amazon.com/images/I/51E49A9-a5L._AC_UL640_QL65_.jpg" alt="Vincent Chase Black Sunglasses"></div>
+        <div class="product-img"> Image 21</div>
         <div class="product-info">
           <div class="product-name">Vincent Chase Matte Black Rectangular Sunglasses</div>
           <div class="rating">rating 4.5 ★</div>
@@ -467,7 +453,7 @@ section {
         <a href="https://link.amazon/B0hxzT2qk" target="_blank" class="btn">BUY NOW</a>
       </div>
       <div class="product-card">
-        <div class="product-img"><img src="https://m.media-amazon.com/images/I/51Jg3bI5f5L._AC_UL640_QL65_.jpg" alt="Blue Tint Sunglasses"></div>
+        <div class="product-img"> Image22</div>
         <div class="product-info">
           <div class="product-name">Vincent Chase Grey-Blue Square Frame Sunglasses</div>
           <div class="rating">rating 4.4 ★</div>
@@ -476,16 +462,16 @@ section {
         <a href="https://link.amazon/B0h9G4qAn" target="_blank" class="btn">BUY NOW</a>
       </div>
       <div class="product-card">
-        <div class="product-img"><img src="https://m.media-amazon.com/images/I/51a-fM4lO9L._AC_UL640_QL65_.jpg" alt="Brown Lens Sunglasses"></div>
+        <div class="product-img"> Image23</div>
         <div class="product-info">
           <div class="product-name">Vincent Chase Classic Brown Lens Sunglasses</div>
           <div class="rating">rating 4.5 ★</div>
           <div class="price">price - ₹899</div>
         </div>
-        <a href="https://link.amazon/B0eURjWbK" target="_blank" class="btn">BUY NOW</a>
+        <a href="https://link.amazon/B0eURJWbK" target="_blank" class="btn">BUY NOW</a>
       </div>
       <div class="product-card">
-        <div class="product-img"><img src="https://m.media-amazon.com/images/I/51w9C74bK7L._AC_UL640_QL65_.jpg" alt="Crystal Blue Glasses"></div>
+        <div class="product-img">Image24</div>
         <div class="product-info">
           <div class="product-name">Anti-Blue Light Computer Glasses (Crystal Blue Frame)</div>
           <div class="rating">rating 4.3 ★</div>
@@ -494,16 +480,16 @@ section {
         <a href="https://link.amazon/B0j6mJZ3u" target="_blank" class="btn">BUY NOW</a>
       </div>
       <div class="product-card">
-        <div class="product-img"><img src="https://m.media-amazon.com/images/I/51F8o4gO03L._AC_UL640_QL65_.jpg" alt="Transparent Clear Glasses"></div>
+        <div class="product-img">Image25</div>
         <div class="product-info">
           <div class="product-name">Clear Frame Anti-Eyestrain Computer Glasses</div>
           <div class="rating">rating 4.4 ★</div>
-          <div class="price">price - ₹384</div>
+          <div class="price">price - ₹348</div>
         </div>
         <a href="https://link.amazon/B0iCVODiy" target="_blank" class="btn">BUY NOW</a>
       </div>
       <div class="product-card">
-        <div class="product-img"><img src="https://m.media-amazon.com/images/I/51wB7-7uL-L._AC_UL640_QL65_.jpg" alt="Grey Metallic Eyeglasses"></div>
+        <div class="product-img">Image26</div>
         <div class="product-info">
           <div class="product-name">Grey Double Bridge Metallic Spectacle Frame</div>
           <div class="rating">rating 4.5 ★</div>
@@ -522,7 +508,7 @@ section {
     
     <div class="product-grid">
       <div class="product-card">
-        <div class="product-img"><img src="https://m.media-amazon.com/images/I/61C2C9I88CL._AC_UL640_QL65_.jpg" alt="Cream Printed Nightwear Co-Ord"></div>
+        <div class="product-img">Import Image 1</div>
         <div class="product-info">
           <div class="product-name">Women Printed Loungewear / Nightwear Set (Cream)</div>
           <div class="rating">rating 4.5 ★</div>
@@ -531,5 +517,57 @@ section {
         <a href="https://link.amazon/B09Y9kKxM" target="_blank" class="btn">BUY NOW</a>
       </div>
       <div class="product-card">
-        <div class="product-img"><img src="https://m.media-amazon.com/images/I/71N15o3D3HL._AC_UL640_QL65_.jpg" alt="Maroon Kurta Set"></div>
-  
+        <div class="product-img">Import Image2</div>
+        <div class="product-info">
+          <div class="product-name">Women's Anarkali Kurta Set with Dupatta (Maroon)</div>
+          <div class="rating">rating 4.6 ★</div>
+          <div class="price">price - ₹764</div>
+        </div>
+        <a href="https://link.amazon/B08KI4mCx" target="_blank" class="btn">BUY NOW</a>
+      </div>
+      <div class="product-card">
+        <div class="product-img">Import Image3</div>
+        <div class="product-info">
+          <div class="product-name">Women's Stylish V-Neck Pleated Maxi Dress (Brown)</div>
+          <div class="rating">rating 4.4 ★</div>
+          <div class="price">price - ₹549</div>
+        </div>
+        <a href="https://link.amazon/B03G4Ce7O" target="_blank" class="btn">BUY NOW</a>
+      </div>
+      <div class="product-card">
+        <div class="product-img">Import Image4</div>
+        <div class="product-info">
+          <div class="product-name">Women's Printed Kurta Set with Dupatta (Teal Blue)</div>
+          <div class="rating">rating 4.5 ★</div>
+          <div class="price">price - ₹709</div>
+        </div>
+        <a href="https://link.amazon/B017BRmc0" target="_blank" class="btn">BUY NOW</a>
+      </div>
+      <div class="product-card">
+        <div class="product-img">Import Image5</div>
+        <div class="product-info">
+          <div class="product-name">Women's High Waist Wide Leg Sweatpants (Black)</div>
+          <div class="rating">rating 4.5 ★</div>
+          <div class="price">price - ₹358</div>
+        </div>
+        <a href="https://link.amazon/B03mbYgwU" target="_blank" class="btn">BUY NOW</a>
+      </div>
+      <div class="product-card">
+        <div class="product-img">Import Image6</div>
+        <div class="product-info">
+          <div class="product-name">Women's Elegant Printed Office Wear Co-Ord Set (White)</div>
+          <div class="rating">rating 4.6 ★</div>
+          <div class="price">price - ₹529</div>
+        </div>
+        <a href="https://link.amazon/B06tBfbOv" target="_blank" class="btn">BUY NOW</a>
+      </div>
+    </div>
+    <a href="#home" class="back-to-top">↑ Back to Categories</a>
+  </section>
+
+  <!-- ==================== WOMEN'S ACCESSORIES SECTION ==================== -->
+  <section id="women-accessories">
+    <h2 class="section-heading">WOMEN'S ACCESSORIES</h2>
+    <p class="subtitle">THE FINISHING TOUCH: DISTINCTIVE ACCENTS THAT DEFINE YOU</p>
+    
+    <div c
