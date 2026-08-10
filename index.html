@@ -5,24 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>REHAANZ STORE</title>
   <style>
-    /* Global Styles */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
     body {
-      background-color: #802A2E; /* Burgundy Background matching your layout */
+      background-color: #802A2E; /* Burgundy Theme */
       color: #FFFFFF;
       font-family: 'Georgia', serif;
       text-align: center;
       scroll-behavior: smooth;
     }
     
-    /* Reusable Typography & Layout Elements */
     section {
       min-height: 100vh;
-      padding: 60px 20px;
+      padding: 50px 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -30,18 +28,30 @@
     }
     
     h1 {
-      font-size: 3rem;
+      font-size: 2.8rem;
       letter-spacing: 2px;
       text-transform: uppercase;
       margin-bottom: 10px;
       font-weight: 400;
+      line-height: 1.2;
+    }
+
+    h2.section-heading {
+      font-size: 2.2rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #FFFFFF;
+      padding-bottom: 10px;
+      width: 80%;
+      max-width: 600px;
     }
     
     .subtitle {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       color: #E0E0E0;
     }
 
@@ -56,20 +66,34 @@
       text-decoration: none;
       display: inline-block;
       margin-top: 10px;
-      transition: transform 0.2s ease;
+      transition: transform 0.2s ease, background-color 0.2s ease;
     }
 
     .btn:hover {
       transform: scale(1.05);
+      background-color: #1a1a1a;
     }
 
-    /* Home Landing Page Grid */
+    .gender-container {
+      margin-bottom: 30px;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .gender-title {
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      color: #FFD700;
+      font-weight: bold;
+    }
+
     .category-grid {
       display: flex;
       justify-content: center;
-      gap: 30px;
+      gap: 20px;
       flex-wrap: wrap;
-      margin-top: 20px;
     }
 
     .category-card {
@@ -77,21 +101,24 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .category-card h3 {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: normal;
-      margin-bottom: 15px;
-      min-height: 40px;
+      margin-bottom: 10px;
+      text-transform: capitalize;
     }
 
-    /* Product Grid Layout */
     .product-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 30px;
-      max-width: 900px;
+      max-width: 1000px;
       width: 100%;
       margin: 0 auto;
     }
@@ -99,7 +126,10 @@
     @media (max-width: 768px) {
       .product-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
       }
+      h1 { font-size: 2rem; }
+      h2.section-heading { font-size: 1.6rem; }
     }
 
     @media (max-width: 480px) {
@@ -109,22 +139,25 @@
     }
 
     .product-card {
+      background: rgba(0, 0, 0, 0.15);
+      border-radius: 8px;
+      padding: 15px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: space-between;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .product-img {
       width: 100%;
       aspect-ratio: 1 / 1;
       background-color: #FFFFFF;
-      color: #000000;
+      border-radius: 6px;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: bold;
-      border-radius: 4px;
-      overflow: hidden;
     }
 
     .product-img img {
@@ -134,209 +167,355 @@
     }
 
     .product-info {
-      margin-top: 10px;
+      margin-top: 12px;
       font-size: 0.9rem;
+      width: 100%;
+    }
+
+    .product-name {
+      font-weight: bold;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      min-height: 2.6em;
     }
 
     .rating {
       color: #FFD700;
       margin: 3px 0;
+      font-size: 0.85rem;
+    }
+
+    .price {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #FFF;
+      margin-top: 2px;
     }
 
     .back-to-top {
       margin-top: 40px;
       color: #FFFFFF;
       text-decoration: underline;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- ==================== MAIN HOME PAGE ==================== -->
+  <!-- ==================== HOME PAGE ==================== -->
   <section id="home">
     <h1>WELCOME TO THE<br>REHAANZ STORE</h1>
     <p class="subtitle">DISCOVER ELEVATED SKINCARE, FASHION & HOME ACCENTS WITH REHAANZ</p>
+
+    <!-- GLOW HUB NAV -->
+    <div class="gender-container">
+      <div class="gender-title">— BEAUTY & CARE —</div>
+      <div class="category-grid">
+        <div class="category-card">
+          <h3>Glow Hub</h3>
+          <a href="#glow-hub" class="btn">EXPLORE</a>
+        </div>
+      </div>
+    </div>
     
-    <div class="category-grid">
-      <div class="category-card">
-        <h3>glow hub</h3>
-        <a href="#glow-hub" class="btn">EXPLORE</a>
+    <!-- MEN SECTION NAV -->
+    <div class="gender-container">
+      <div class="gender-title">— MEN —</div>
+      <div class="category-grid">
+        <div class="category-card">
+          <h3>Wardrobe</h3>
+          <a href="#men-wardrobe" class="btn">EXPLORE</a>
+        </div>
+        <div class="category-card">
+          <h3>Accessories</h3>
+          <a href="#men-accessories" class="btn">EXPLORE</a>
+        </div>
       </div>
-      <div class="category-card">
-        <h3>wordrobe</h3>
-        <a href="#wordrobe" class="btn">EXPLORE</a>
+    </div>
+
+    <!-- WOMEN SECTION NAV -->
+    <div class="gender-container">
+      <div class="gender-title">— WOMEN —</div>
+      <div class="category-grid">
+        <div class="category-card">
+          <h3>Wardrobe</h3>
+          <a href="#women-wardrobe" class="btn">EXPLORE</a>
+        </div>
+        <div class="category-card">
+          <h3>Accessories</h3>
+          <a href="#women-accessories" class="btn">EXPLORE</a>
+        </div>
       </div>
-      <div class="category-card">
-        <h3>Accessories zone</h3>
-        <a href="#accessories-zone" class="btn">EXPLORE</a>
-      </div>
-      <div class="category-card">
-        <h3>Kitchen</h3>
-        <a href="#kitchen" class="btn">EXPLORE</a>
+    </div>
+
+    <!-- HOME & KITCHEN NAV -->
+    <div class="gender-container">
+      <div class="gender-title">— HOME & LIVING —</div>
+      <div class="category-grid">
+        <div class="category-card">
+          <h3>Kitchen Zone</h3>
+          <a href="#kitchen" class="btn">EXPLORE</a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ==================== GLOW HUB SECTION ==================== -->
   <section id="glow-hub">
-    <h1>GLOW HUB</h1>
+    <h2 class="section-heading">GLOW HUB</h2>
     <p class="subtitle">TIMELESS ELEGANCE: CURATED ESSENTIALS FOR YOUR GLOW</p>
     
     <div class="product-grid">
-      <!-- Product Item 1 -->
       <div class="product-card">
-        <div class="product-img">PRODUCT PIC</div>
+        <div class="product-img"><img src="https://m.media-amazon.com/images/I/51wXkY7AURL._SL1000_.jpg" alt="Himalaya Dark Spot Clearing Face Wash"></div>
         <div class="product-info">
-          <div>Product name</div>
+          <div class="product-name">Himalaya Dark Spot Clearing Turmeric Face Wash (100ml)</div>
           <div class="rating">rating 4.5 ★</div>
-          <div>price - 299Rs</div>
+          <div class="price">price - ₹136</div>
         </div>
-        <!-- Replace href value with your Affiliate Link -->
-        <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="btn">BUY NOW</a>
-      </div>
-      <!-- Repeat Products as needed -->
-      <div class="product-card">
-        <div class="product-img">PRODUCT PIC</div>
-        <div class="product-info">
-          <div>Product name</div>
-          <div class="rating">rating 4.5 ★</div>
-          <div>price - 299Rs</div>
-        </div>
-        <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="btn">BUY NOW</a>
+        <a href="https://link.amazon/B00SGQIna" target="_blank" class="btn">BUY NOW</a>
       </div>
       <div class="product-card">
-        <div class="product-img">PRODUCT PIC</div>
+        <div class="product-img"><img src="https://m.media-amazon.com/images/I/61iVvJ2kRPL._SL1000_.jpg" alt="FoxTale Skin Radiance Mask"></div>
         <div class="product-info">
-          <div>Product name</div>
-          <div class="rating">rating 4.5 ★</div>
-          <div>price - 299Rs</div>
+          <div class="product-name">FoxTale De-Tan Face Mask for Glowing Skin (12g)</div>
+          <div class="rating">rating 4.0 ★</div>
+          <div class="price">price - ₹150</div>
         </div>
-        <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="btn">BUY NOW</a>
+        <a href="https://link.amazon/B06z34w5M" target="_blank" class="btn">BUY NOW</a>
       </div>
       <div class="product-card">
-        <div class="product-img">PRODUCT PIC</div>
+        <div class="product-img"><img src="https://m.media-amazon.com/images/I/61S-+3W1oTL._SL1500_.jpg" alt="Simple Refreshing Facial Wash"></div>
         <div class="product-info">
-          <div>Product name</div>
+          <div class="product-name">Simple Kind To Skin Refreshing Facial Wash (150ml)</div>
           <div class="rating">rating 4.5 ★</div>
-          <div>price - 299Rs</div>
+          <div class="price">price - ₹225</div>
         </div>
-        <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="btn">BUY NOW</a>
+        <a href="https://link.amazon/B0foOwyqK" target="_blank" class="btn">BUY NOW</a>
       </div>
       <div class="product-card">
-        <div class="product-img">PRODUCT PIC</div>
+        <div class="product-img"><img src="https://m.media-amazon.com/images/I/61W34wD5IqL._SL1000_.jpg" alt="Himalaya Dark Spot Serum"></div>
         <div class="product-info">
-          <div>Product name</div>
-          <div class="rating">rating 4.5 ★</div>
-          <div>price - 299Rs</div>
+          <div class="product-name">Himalaya Dark Spot Clearing Turmeric Face Serum (15ml)</div>
+          <div class="rating">rating 4.4 ★</div>
+          <div class="price">price - ₹194</div>
         </div>
-        <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="btn">BUY NOW</a>
+        <a href="https://link.amazon/B0J41QmjI" target="_blank" class="btn">BUY NOW</a>
       </div>
       <div class="product-card">
-        <div class="product-img">PRODUCT PIC</div>
+        <div class="product-img"><img src="https://m.media-amazon.com/images/I/61q3kM2pAnL._SL1000_.jpg" alt="Bio-Collagen Mask"></div>
         <div class="product-info">
-          <div>Product name</div>
-          <div class="rating">rating 4.5 ★</div>
-          <div>price - 299Rs</div>
+          <div class="product-name">Bio-Collagen Real Deep Face Mask (Pack of 4)</div>
+          <div class="rating">rating 4.6 ★</div>
+          <div class="price">price - ₹208</div>
         </div>
-        <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="btn">BUY NOW</a>
+        <a href="https://link.amazon/B07Lw2oUA" target="_blank" class="btn">BUY NOW</a>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="https://m.media-amazon.com/images/I/61fI6y+4YpL._SL1500_.jpg" alt="Cetaphil Gentle Cleanser"></div>
+        <div class="product-info">
+          <div class="product-name">Cetaphil Gentle Skin Hydrating Face Wash Cleanser (118ml)</div>
+          <div class="rating">rating 4.3 ★</div>
+          <div class="price">price - ₹335</div>
+        </div>
+        <a href="https://link.amazon/B0fQ00ubj" target="_blank" class="btn">BUY NOW</a>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="https://m.media-amazon.com/images/I/61nNfI-gInL._SL1000_.jpg" alt="Himalaya Kesar Face Wash"></div>
+        <div class="product-info">
+          <div class="product-name">Himalaya Natural Glow Kesar Face Wash (150ml)</div>
+          <div class="rating">rating 4.5 ★</div>
+          <div class="price">price - ₹153</div>
+        </div>
+        <a href="https://link.amazon/B0fy4o1UO" target="_blank" class="btn">BUY NOW</a>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="https://m.media-amazon.com/images/I/513y+B9vD2L._SL1000_.jpg" alt="Vaseline Gluta-Hya Lotion"></div>
+        <div class="product-info">
+          <div class="product-name">Vaseline Gluta-Hya Dewy Radiance Body Lotion (200ml)</div>
+          <div class="rating">rating 4.3 ★</div>
+          <div class="price">price - ₹220</div>
+        </div>
+        <a href="https://link.amazon/B0hXylOf5" target="_blank" class="btn">BUY NOW</a>
       </div>
     </div>
     <a href="#home" class="back-to-top">↑ Back to Categories</a>
   </section>
 
-  <!-- ==================== WORDROBE SECTION ==================== -->
-  <section id="wordrobe">
-    <h1>WORDROBE</h1>
+  <!-- ==================== MEN'S WARDROBE SECTION ==================== -->
+  <section id="men-wardrobe">
+    <h2 class="section-heading">MEN'S WARDROBE</h2>
     <p class="subtitle">TAILORED PERFECTION: WEARABLE LUXURY FOR EVERY OCCASION</p>
     
     <div class="product-grid">
       <div class="product-card">
-        <div class="product-img">PRODUCT PIC</div>
+        <div class="product-img"><img src="https://m.media-amazon.com/images/I/71qV8pL20LL._AC_UL640_QL65_.jpg" alt="Zip Collar Polo Sweatshirt"></div>
         <div class="product-info">
-          <div>Product name</div>
+          <div class="product-name">Men's Contrast Collar Zip Long Sleeve Polo (Brown)</div>
           <div class="rating">rating 4.5 ★</div>
-          <div>price - 299Rs</div>
+          <div class="price">price - ₹699</div>
         </div>
-        <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="btn">BUY NOW</a>
+        <a href="https://link.amazon/B0avlUtrz" target="_blank" class="btn">BUY NOW</a>
       </div>
       <div class="product-card">
-        <div class="product-img">PRODUCT PIC</div>
+        <div class="product-img"><img src="https://m.media-amazon.com/images/I/61k9sP-uK7L._AC_UL640_QL65_.jpg" alt="Nautical Blue Polo"></div>
         <div class="product-info">
-          <div>Product name</div>
-          <div class="rating">rating 4.5 ★</div>
-          <div>price - 299Rs</div>
+          <div class="product-name">Men's Nautical Blue Slim Fit Polo T-Shirt</div>
+          <div class="rating">rating 4.4 ★</div>
+          <div class="price">price - ₹499</div>
         </div>
-        <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="btn">BUY NOW</a>
+        <a href="https://link.amazon/B00ZzOfNa" target="_blank" class="btn">BUY NOW</a>
       </div>
       <div class="product-card">
-        <div class="product-img">PRODUCT PIC</div>
+        <div class="product-img"><img src="https://m.media-amazon.com/images/I/71R2oI0fNlL._AC_UL640_QL65_.jpg" alt="DEELMO Linen Shirt"></div>
         <div class="product-info">
-          <div>Product name</div>
+          <div class="product-name">DEELMO Casual Textured Linen Button Down Shirt (Maroon)</div>
           <div class="rating">rating 4.5 ★</div>
-          <div>price - 299Rs</div>
+          <div class="price">price - ₹799</div>
         </div>
-        <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="btn">BUY NOW</a>
+        <a href="https://link.amazon/B0guVW6MR" target="_blank" class="btn">BUY NOW</a>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="https://m.media-amazon.com/images/I/61Xp0N1P7VL._AC_UL640_QL65_.jpg" alt="Brooklyn Sleeveless Tee"></div>
+        <div class="product-info">
+          <div class="product-name">Men's Brooklyn Printed Sleeveless Gym T-Shirt</div>
+          <div class="rating">rating 4.3 ★</div>
+          <div class="price">price - ₹399</div>
+        </div>
+        <a href="https://link.amazon/B0cmavyDI" target="_blank" class="btn">BUY NOW</a>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="https://m.media-amazon.com/images/I/51w9f0XJ7-L._AC_UL640_QL65_.jpg" alt="Classic Black Polo"></div>
+        <div class="product-info">
+          <div class="product-name">Men's Classic Black Solid Polo T-Shirt</div>
+          <div class="rating">rating 4.6 ★</div>
+          <div class="price">price - ₹549</div>
+        </div>
+        <a href="https://link.amazon/B0byCqhQ2" target="_blank" class="btn">BUY NOW</a>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="https://m.media-amazon.com/images/I/61kC8N9yVNL._AC_UL640_QL65_.jpg" alt="Beige Track Pants"></div>
+        <div class="product-info">
+          <div class="product-name">Men's Stylish Beige Striped Loose Track Pants</div>
+          <div class="rating">rating 4.4 ★</div>
+          <div class="price">price - ₹649</div>
+        </div>
+        <a href="https://link.amazon/B01zRG5Qc" target="_blank" class="btn">BUY NOW</a>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="https://m.media-amazon.com/images/I/61Lg0D83A6L._AC_UL640_QL65_.jpg" alt="Cargo Shorts"></div>
+        <div class="product-info">
+          <div class="product-name">Men's Light Grey Multi-Pocket Cargo Shorts</div>
+          <div class="rating">rating 4.5 ★</div>
+          <div class="price">price - ₹499</div>
+        </div>
+        <a href="https://link.amazon/B08Nd4qtw" target="_blank" class="btn">BUY NOW</a>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="https://m.media-amazon.com/images/I/51-mY28S-bL._AC_UL640_QL65_.jpg" alt="Black Track Pants"></div>
+        <div class="product-info">
+          <div class="product-name">Men's Casual Black Loose Drawstring Sweatpants</div>
+          <div class="rating">rating 4.5 ★</div>
+          <div class="price">price - ₹599</div>
+        </div>
+        <a href="https://link.amazon/B08v6kCOO" target="_blank" class="btn">BUY NOW</a>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="https://m.media-amazon.com/images/I/61eO9G00oLL._AC_UL640_QL65_.jpg" alt="Green Cargo Joggers"></div>
+        <div class="product-info">
+          <div class="product-name">Men's Olive Green Zipper Pocket Cargo Joggers</div>
+          <div class="rating">rating 4.4 ★</div>
+          <div class="price">price - ₹699</div>
+        </div>
+        <a href="https://link.amazon/B0b0C1GoZ" target="_blank" class="btn">BUY NOW</a>
       </div>
     </div>
     <a href="#home" class="back-to-top">↑ Back to Categories</a>
   </section>
 
-  <!-- ==================== ACCESSORIES ZONE SECTION ==================== -->
-  <section id="accessories-zone">
-    <h1>ACCESSORIES ZONE</h1>
-    <p class="subtitle">THE FINISHING TOUCH: DISTINCTIVE ACCENTS THAT DEFINE YOU</p>
+  <!-- ==================== MEN'S ACCESSORIES SECTION ==================== -->
+  <section id="men-accessories">
+    <h2 class="section-heading">MEN'S ACCESSORIES</h2>
+    <p class="subtitle">ELEVATE YOUR STYLE WITH MODERN GLASSES & ACCENTS</p>
     
     <div class="product-grid">
       <div class="product-card">
-        <div class="product-img">PRODUCT PIC</div>
+        <div class="product-img"><img src="https://m.media-amazon.com/images/I/51E49A9-a5L._AC_UL640_QL65_.jpg" alt="Vincent Chase Black Sunglasses"></div>
         <div class="product-info">
-          <div>Product name</div>
+          <div class="product-name">Vincent Chase Matte Black Rectangular Sunglasses</div>
           <div class="rating">rating 4.5 ★</div>
-          <div>price - 299Rs</div>
+          <div class="price">price - ₹799</div>
         </div>
-        <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="btn">BUY NOW</a>
+        <a href="https://link.amazon/B0hxzT2qk" target="_blank" class="btn">BUY NOW</a>
       </div>
       <div class="product-card">
-        <div class="product-img">PRODUCT PIC</div>
+        <div class="product-img"><img src="https://m.media-amazon.com/images/I/51Jg3bI5f5L._AC_UL640_QL65_.jpg" alt="Blue Tint Sunglasses"></div>
         <div class="product-info">
-          <div>Product name</div>
-          <div class="rating">rating 4.5 ★</div>
-          <div>price - 299Rs</div>
+          <div class="product-name">Vincent Chase Grey-Blue Square Frame Sunglasses</div>
+          <div class="rating">rating 4.4 ★</div>
+          <div class="price">price - ₹849</div>
         </div>
-        <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="btn">BUY NOW</a>
+        <a href="https://link.amazon/B0h9G4qAn" target="_blank" class="btn">BUY NOW</a>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="https://m.media-amazon.com/images/I/51a-fM4lO9L._AC_UL640_QL65_.jpg" alt="Brown Lens Sunglasses"></div>
+        <div class="product-info">
+          <div class="product-name">Vincent Chase Classic Brown Lens Sunglasses</div>
+          <div class="rating">rating 4.5 ★</div>
+          <div class="price">price - ₹899</div>
+        </div>
+        <a href="https://link.amazon/B0eURJWbK" target="_blank" class="btn">BUY NOW</a>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="https://m.media-amazon.com/images/I/51w9C74bK7L._AC_UL640_QL65_.jpg" alt="Crystal Blue Glasses"></div>
+        <div class="product-info">
+          <div class="product-name">Anti-Blue Light Computer Glasses (Crystal Blue Frame)</div>
+          <div class="rating">rating 4.3 ★</div>
+          <div class="price">price - ₹499</div>
+        </div>
+        <a href="https://link.amazon/B0j6mJZ3u" target="_blank" class="btn">BUY NOW</a>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="https://m.media-amazon.com/images/I/51F8o4gO03L._AC_UL640_QL65_.jpg" alt="Transparent Clear Glasses"></div>
+        <div class="product-info">
+          <div class="product-name">Clear Frame Anti-Eyestrain Computer Glasses</div>
+          <div class="rating">rating 4.4 ★</div>
+          <div class="price">price - ₹449</div>
+        </div>
+        <a href="https://link.amazon/B0iCVODiy" target="_blank" class="btn">BUY NOW</a>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="https://m.media-amazon.com/images/I/51wB7-7uL-L._AC_UL640_QL65_.jpg" alt="Grey Metallic Eyeglasses"></div>
+        <div class="product-info">
+          <div class="product-name">Grey Double Bridge Metallic Spectacle Frame</div>
+          <div class="rating">rating 4.5 ★</div>
+          <div class="price">price - ₹699</div>
+        </div>
+        <a href="https://link.amazon/B05Gplxm5" target="_blank" class="btn">BUY NOW</a>
       </div>
     </div>
     <a href="#home" class="back-to-top">↑ Back to Categories</a>
   </section>
 
-  <!-- ==================== KITCHEN SECTION ==================== -->
-  <section id="kitchen">
-    <h1>KITCHEN</h1>
-    <p class="subtitle">PREMIUM ESSENTIALS FOR THE HEART OF YOUR HOME</p>
+  <!-- ==================== WOMEN'S WARDROBE SECTION ==================== -->
+  <section id="women-wardrobe">
+    <h2 class="section-heading">WOMEN'S WARDROBE</h2>
+    <p class="subtitle">ELEGANT, TRENDY & COMFY FASHION FOR WOMEN</p>
     
     <div class="product-grid">
       <div class="product-card">
-        <div class="product-img">PRODUCT PIC</div>
+        <div class="product-img"><img src="https://m.media-amazon.com/images/I/61C2C9I88CL._AC_UL640_QL65_.jpg" alt="Cream Printed Nightwear Co-Ord"></div>
         <div class="product-info">
-          <div>Product name</div>
+          <div class="product-name">Women Printed Loungewear / Nightwear Set (Cream)</div>
           <div class="rating">rating 4.5 ★</div>
-          <div>price - 299Rs</div>
+          <div class="price">price - ₹599</div>
         </div>
-        <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="btn">BUY NOW</a>
+        <a href="https://link.amazon/B09Y9kKxM" target="_blank" class="btn">BUY NOW</a>
       </div>
       <div class="product-card">
-        <div class="product-img">PRODUCT PIC</div>
-        <div class="product-info">
-          <div>Product name</div>
-          <div class="rating">rating 4.5 ★</div>
-          <div>price - 299Rs</div>
-        </div>
-        <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="btn">BUY NOW</a>
-      </div>
-    </div>
-    <a href="#home" class="back-to-top">↑ Back to Categories</a>
-  </section>
-
-</body>
-</html>
+        <div class="product-img"><img src="https://m.media-amazon.com/images/I/71N15o3D3HL._AC_UL640_QL65_.jpg" alt="Maroon Kurta Set"></div>
+  
