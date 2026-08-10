@@ -1,625 +1,342 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="hi">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>REHAANZ | Beauty & Lifestyle</title>
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
-
-body{
-    background:#faf8f6;
-    color:#222;
-}
-
-/* HEADER */
-
-header{
-    background:white;
-    padding:20px;
-    text-align:center;
-    border-bottom:1px solid #eee;
-}
-
-.logo{
-    font-size:30px;
-    font-weight:bold;
-    letter-spacing:4px;
-}
-
-.tagline{
-    color:#777;
-    font-size:13px;
-    margin-top:5px;
-}
-
-/* HERO */
-
-.hero{
-    padding:45px 20px;
-    text-align:center;
-    background:linear-gradient(135deg,#f7e8e8,#f7f3ee);
-}
-
-.hero h1{
-    font-size:35px;
-    margin-bottom:10px;
-}
-
-.hero p{
-    color:#666;
-    margin-bottom:25px;
-}
-
-.hero a{
-    display:inline-block;
-    background:#222;
-    color:white;
-    text-decoration:none;
-    padding:13px 28px;
-    border-radius:30px;
-}
-
-/* SEARCH */
-
-.search{
-    padding:20px;
-    text-align:center;
-}
-
-.search input{
-    width:90%;
-    max-width:500px;
-    padding:14px 18px;
-    border:1px solid #ddd;
-    border-radius:30px;
-    outline:none;
-    font-size:15px;
-}
-
-/* SECTION */
-
-.section-title{
-    padding:10px 20px 20px;
-}
-
-.section-title h2{
-    font-size:24px;
-}
-
-/* PRODUCTS */
-
-.products{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
-    padding:0 20px 40px;
-}
-
-.card{
-    background:white;
-    border-radius:18px;
-    padding:12px;
-    box-shadow:0 5px 20px rgba(0,0,0,.06);
-}
-
-.card img{
-    width:100%;
-    height:180px;
-    object-fit:contain;
-    border-radius:13px;
-    background:#f7f7f7;
-}
-
-.card h3{
-    font-size:15px;
-    margin:12px 3px 6px;
-    line-height:1.4;
-}
-
-.rating{
-    color:#777;
-    font-size:13px;
-    margin:5px 3px;
-}
-
-.price{
-    font-size:18px;
-    font-weight:bold;
-    margin:8px 3px;
-}
-
-.commission{
-    color:#008f5a;
-    font-size:12px;
-    margin:5px 3px;
-}
-
-.buy{
-    display:block;
-    text-align:center;
-    background:#222;
-    color:white;
-    text-decoration:none;
-    padding:11px;
-    border-radius:10px;
-    margin-top:10px;
-    font-size:14px;
-}
-
-/* FOOTER */
-
-footer{
-    background:#222;
-    color:white;
-    text-align:center;
-    padding:30px 20px;
-}
-
-footer h2{
-    letter-spacing:3px;
-}
-
-footer p{
-    color:#bbb;
-    font-size:13px;
-    margin-top:8px;
-}
-
-/* MOBILE */
-
-@media(max-width:400px){
-
-    .products{
-        grid-template-columns:1fr 1fr;
-        padding:0 12px 30px;
-        gap:10px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REHAANZ STORE</title>
+  <style>
+    /* Global Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #802A2E; /* Burgundy Background matching your layout */
+      color: #FFFFFF;
+      font-family: 'Georgia', serif;
+      text-align: center;
+      scroll-behavior: smooth;
+    }
+    
+    /* Reusable Typography & Layout Elements */
+    section {
+      min-height: 100vh;
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      font-weight: 400;
+    }
+    
+    .subtitle {
+      font-size: 0.9rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+      color: #E0E0E0;
     }
 
-    .card{
-        padding:9px;
+    .btn {
+      background-color: #000000;
+      color: #D32F2F;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+      transition: transform 0.2s ease;
     }
 
-    .card img{
-        height:150px;
+    .btn:hover {
+      transform: scale(1.05);
     }
 
-    .card h3{
-        font-size:14px;
+    /* Home Landing Page Grid */
+    .category-grid {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 20px;
     }
 
-    .price{
-        font-size:17px;
+    .category-card {
+      width: 160px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-}
+    .category-card h3 {
+      font-size: 1.2rem;
+      font-weight: normal;
+      margin-bottom: 15px;
+      min-height: 40px;
+    }
 
-</style>
+    /* Product Grid Layout */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      max-width: 900px;
+      width: 100%;
+      margin: 0 auto;
+    }
 
+    @media (max-width: 768px) {
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .product-img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background-color: #FFFFFF;
+      color: #000000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-info {
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    .rating {
+      color: #FFD700;
+      margin: 3px 0;
+    }
+
+    .back-to-top {
+      margin-top: 40px;
+      color: #FFFFFF;
+      text-decoration: underline;
+      font-size: 0.85rem;
+    }
+  </style>
 </head>
-
-
 <body>
 
-
-<!-- HEADER -->
-
-<header>
-
-    <div class="logo">
-        REHAANZ
-    </div>
-
-    <div class="tagline">
-        Beauty • Fashion • Lifestyle
-    </div>
-
-</header>
-
-
-<!-- HERO -->
-
-<section class="hero">
-
-    <h1>
-        Discover Your Style
-    </h1>
-
-    <p>
-        Beauty products & amazing deals, all in one place.
-    </p>
-
-    <a href="#products">
-        SHOP NOW
-    </a>
-
-</section>
-
-
-<!-- SEARCH -->
-
-<div class="search">
-
-    <input
-        type="text"
-        id="searchBox"
-        placeholder="🔍 Search products..."
-        onkeyup="searchProducts()"
-    >
-
-</div>
-
-
-<!-- PRODUCT SECTION -->
-
-<div class="section-title">
-
-    <h2>
-        ✨ Face Care
-    </h2>
-
-</div>
-
-
-<div class="products" id="products">
-
-
-<!-- PRODUCT 1 -->
-
-<div class="card">
-
-    <img
-        src="1786305065388.jpeg"
-        alt="Mamaearth Beetroot Gentle Face Wash"
-    >
-
-    <h3>
-        Mamaearth Beetroot Gentle Face Wash
-        with Beetroot & Hyaluronic Acid
-    </h3>
-
-    <div class="rating">
-        ⭐ Hydrate & Glow
-    </div>
-
-    <div class="price">
-        ₹241
-    </div>
-
-
-
-    <a
-        class="buy"
-        href="https://www.meesho.com/af_invite/462588404:facebook:7919112?p_id=389984138&ext_id=6g6poq&utm_source=facebook"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        BUY NOW
-    </a>
-
-</div>
-
-
-<!-- PRODUCT 2 -->
-
-<div class="card">
-
-    <img
-        src="1786305614337.jpeg"
-        alt="Mamaearth Vitamin C Daily Glow Face Cream"
-    >
-
-    <h3>
-        Mamaearth Vitamin C Daily Glow
-        Face Cream with Vitamin C
-    </h3>
-
-    <div class="rating">
-        ⭐ For Skin Illumination
-    </div>
-
-    <div class="price">
-        ₹228
-    </div>
+  <!-- ==================== MAIN HOME PAGE ==================== -->
+  <section id="home">
+    <h1>WELCOME TO THE<br>REHAANZ STORE</h1>
+    <p class="subtitle">DISCOVER ELEVATED SKINCARE, FASHION & HOME ACCENTS WITH REHAANZ</p>
     
-
-    <a
-        class="buy"
-        href="https://www.meesho.com/af_invite/462588404:facebook:7919127?p_id=195110069&ext_id=385vw5&utm_source=facebook"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        BUY NOW
-    </a>
-
-</div>
-
-
-<!-- PRODUCT 3 -->
-
-<div class="card">
-
-    <img
-        src="1786305658321.webp"
-        alt="Mamaearth Vitamin C Face Wash"
-    >
-
-    <h3>
-        Mamaearth Vitamin C Face Wash
-        with Vitamin C & Turmeric
-    </h3>
-
-    <div class="rating">
-        ⭐ 4.3 ★
+    <div class="category-grid">
+      <div class="category-card">
+        <h3>glow hub</h3>
+        <a href="#glow-hub" class="btn">EXPLORE</a>
+      </div>
+      <div class="category-card">
+        <h3>wordrobe</h3>
+        <a href="#wordrobe" class="btn">EXPLORE</a>
+      </div>
+      <div class="category-card">
+        <h3>Accessories zone</h3>
+        <a href="#accessories-zone" class="btn">EXPLORE</a>
+      </div>
+      <div class="category-card">
+        <h3>Kitchen</h3>
+        <a href="#kitchen" class="btn">EXPLORE</a>
+      </div>
     </div>
+  </section>
 
-    <div class="price">
-        ₹314
-    </div>
-
+  <!-- ==================== GLOW HUB SECTION ==================== -->
+  <section id="glow-hub">
+    <h1>GLOW HUB</h1>
+    <p class="subtitle">TIMELESS ELEGANCE: CURATED ESSENTIALS FOR YOUR GLOW</p>
     
-    <a
-        class="buy"
-        href="https://www.meesho.com/af_invite/462588404:facebook:7919138?p_id=142278369&ext_id=2cpiox&utm_source=facebook"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        BUY NOW
-    </a>
-
-</div>
-
-
-<!-- PRODUCT 4 -->
-
-<div class="card">
-
-    <img
-        src="1786305677642.webp"
-        alt="Mamaearth Multani Mitti Face Wash Pack of 3"
-    >
-
-    <h3>
-        Mamaearth Multani Mitti Face Wash
-        50 ml Pack of 3
-    </h3>
-
-    <div class="rating">
-        ⭐ 4.1 ★
+    <div class="product-grid">
+      <!-- Product Item 1 -->
+      <div class="product-card">
+        <div class="product-img">PRODUCT PIC</div>
+        <div class="product-info">
+          <div>Product name</div>
+          <div class="rating">rating 4.5 ★</div>
+          <div>price - 299Rs</div>
+        </div>
+        <!-- Replace href value with your Affiliate Link -->
+        <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="btn">BUY NOW</a>
+      </div>
+      <!-- Repeat Products as needed -->
+      <div class="product-card">
+        <div class="product-img">PRODUCT PIC</div>
+        <div class="product-info">
+          <div>Product name</div>
+          <div class="rating">rating 4.5 ★</div>
+          <div>price - 299Rs</div>
+        </div>
+        <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="btn">BUY NOW</a>
+      </div>
+      <div class="product-card">
+        <div class="product-img">PRODUCT PIC</div>
+        <div class="product-info">
+          <div>Product name</div>
+          <div class="rating">rating 4.5 ★</div>
+          <div>price - 299Rs</div>
+        </div>
+        <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="btn">BUY NOW</a>
+      </div>
+      <div class="product-card">
+        <div class="product-img">PRODUCT PIC</div>
+        <div class="product-info">
+          <div>Product name</div>
+          <div class="rating">rating 4.5 ★</div>
+          <div>price - 299Rs</div>
+        </div>
+        <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="btn">BUY NOW</a>
+      </div>
+      <div class="product-card">
+        <div class="product-img">PRODUCT PIC</div>
+        <div class="product-info">
+          <div>Product name</div>
+          <div class="rating">rating 4.5 ★</div>
+          <div>price - 299Rs</div>
+        </div>
+        <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="btn">BUY NOW</a>
+      </div>
+      <div class="product-card">
+        <div class="product-img">PRODUCT PIC</div>
+        <div class="product-info">
+          <div>Product name</div>
+          <div class="rating">rating 4.5 ★</div>
+          <div>price - 299Rs</div>
+        </div>
+        <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="btn">BUY NOW</a>
+      </div>
     </div>
+    <a href="#home" class="back-to-top">↑ Back to Categories</a>
+  </section>
 
-    <div class="price">
-        ₹296
-    </div>
-
+  <!-- ==================== WORDROBE SECTION ==================== -->
+  <section id="wordrobe">
+    <h1>WORDROBE</h1>
+    <p class="subtitle">TAILORED PERFECTION: WEARABLE LUXURY FOR EVERY OCCASION</p>
     
-
-    <a
-        class="buy"
-        href="https://www.meesho.com/af_invite/462588404:facebook:7919147?p_id=498232776&ext_id=88muvc&utm_source=facebook"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        BUY NOW
-    </a>
-
-</div>
-
-
-<!-- PRODUCT 5 -->
-
-<div class="card">
-
-    <img
-        src="1786305717107.webp"
-        alt="Mamaearth Ubtan Natural Glow Face Wash"
-    >
-
-    <h3>
-        Mamaearth Ubtan Natural Glow
-        Face Wash with Turmeric & Saffron
-    </h3>
-
-    <div class="rating">
-        ⭐ 4.2 ★
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-img">PRODUCT PIC</div>
+        <div class="product-info">
+          <div>Product name</div>
+          <div class="rating">rating 4.5 ★</div>
+          <div>price - 299Rs</div>
+        </div>
+        <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="btn">BUY NOW</a>
+      </div>
+      <div class="product-card">
+        <div class="product-img">PRODUCT PIC</div>
+        <div class="product-info">
+          <div>Product name</div>
+          <div class="rating">rating 4.5 ★</div>
+          <div>price - 299Rs</div>
+        </div>
+        <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="btn">BUY NOW</a>
+      </div>
+      <div class="product-card">
+        <div class="product-img">PRODUCT PIC</div>
+        <div class="product-info">
+          <div>Product name</div>
+          <div class="rating">rating 4.5 ★</div>
+          <div>price - 299Rs</div>
+        </div>
+        <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="btn">BUY NOW</a>
+      </div>
     </div>
+    <a href="#home" class="back-to-top">↑ Back to Categories</a>
+  </section>
 
-    <div class="price">
-        ₹236
-    </div>
-
+  <!-- ==================== ACCESSORIES ZONE SECTION ==================== -->
+  <section id="accessories-zone">
+    <h1>ACCESSORIES ZONE</h1>
+    <p class="subtitle">THE FINISHING TOUCH: DISTINCTIVE ACCENTS THAT DEFINE YOU</p>
     
-
-    <a
-        class="buy"
-        href="https://www.meesho.com/af_invite/462588404:facebook:7919159?p_id=17602893&ext_id=ahah9&utm_source=facebook"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        BUY NOW
-    </a>
-
-</div>
-
-
-<!-- PRODUCT 6 -->
-
-<div class="card">
-
-    <img
-        src="1786305777803.jpeg"
-        alt="Mamaearth Vitamin C Face Wash 150 ml"
-    >
-
-    <h3>
-        Mamaearth Vitamin C Face Wash
-        150 ml with Vitamin C & Turmeric
-    </h3>
-
-    <div class="rating">
-        ⭐ 4.3 ★
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-img">PRODUCT PIC</div>
+        <div class="product-info">
+          <div>Product name</div>
+          <div class="rating">rating 4.5 ★</div>
+          <div>price - 299Rs</div>
+        </div>
+        <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="btn">BUY NOW</a>
+      </div>
+      <div class="product-card">
+        <div class="product-img">PRODUCT PIC</div>
+        <div class="product-info">
+          <div>Product name</div>
+          <div class="rating">rating 4.5 ★</div>
+          <div>price - 299Rs</div>
+        </div>
+        <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="btn">BUY NOW</a>
+      </div>
     </div>
+    <a href="#home" class="back-to-top">↑ Back to Categories</a>
+  </section>
 
-    <div class="price">
-        ₹341
-    </div>
-
+  <!-- ==================== KITCHEN SECTION ==================== -->
+  <section id="kitchen">
+    <h1>KITCHEN</h1>
+    <p class="subtitle">PREMIUM ESSENTIALS FOR THE HEART OF YOUR HOME</p>
     
-
-    <a
-        class="buy"
-        href="https://www.meesho.com/af_invite/462588404:facebook:7919180?p_id=422747615&ext_id=6zoy5b&utm_source=facebook"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        BUY NOW
-    </a>
-
-</div>
-
-
-<!-- PRODUCT 7 -->
-
-<div class="card">
-
-    <img
-        src="1786305798770.jpeg"
-        alt="Mamaearth Ubtan Face Wash Pack of 2"
-    >
-
-    <h3>
-        Mamaearth Ubtan Face Wash
-        100 ml Pack of 2
-    </h3>
-
-    <div class="rating">
-        ⭐ 4.3 ★
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-img">PRODUCT PIC</div>
+        <div class="product-info">
+          <div>Product name</div>
+          <div class="rating">rating 4.5 ★</div>
+          <div>price - 299Rs</div>
+        </div>
+        <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="btn">BUY NOW</a>
+      </div>
+      <div class="product-card">
+        <div class="product-img">PRODUCT PIC</div>
+        <div class="product-info">
+          <div>Product name</div>
+          <div class="rating">rating 4.5 ★</div>
+          <div>price - 299Rs</div>
+        </div>
+        <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="btn">BUY NOW</a>
+      </div>
     </div>
-
-    <div class="price">
-        ₹385
-    </div>
-
-    
-
-    <a
-        class="buy"
-        href="https://www.meesho.com/af_invite/462588404:facebook:7919199?p_id=381861671&ext_id=6bcmcn&utm_source=facebook"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        BUY NOW
-    </a>
-
-</div>
-
-
-<!-- PRODUCT 8 -->
-
-<div class="card">
-
-    <img
-        src="1786305822563.jpeg"
-        alt="Mamaearth Multani Mitti Oil Balance Face Wash"
-    >
-
-    <h3>
-        Mamaearth Multani Mitti Oil Balance
-        Face Wash with Multani Mitti
-    </h3>
-
-    <div class="rating">
-        ⭐ 4.3 ★
-    </div>
-
-    <div class="price">
-        ₹244
-    </div>
-
-    
-
-    <a
-        class="buy"
-        href="https://www.meesho.com/af_invite/462588404:facebook:7919218?p_id=295083898&ext_id=4voo6y&utm_source=facebook"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        BUY NOW
-    </a>
-
-</div>
-
-
-</div>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-    <h2>
-        REHAANZ
-    </h2>
-
-    <p>
-        Discover • Shop • Enjoy
-    </p>
-
-    <p>
-        © 2026 Rehaanz
-    </p>
-
-</footer>
-
-
-<!-- SEARCH SCRIPT -->
-
-<script>
-
-function searchProducts(){
-
-    let input = document
-        .getElementById("searchBox")
-        .value
-        .toLowerCase();
-
-    let products = document
-        .querySelectorAll(".card");
-
-    products.forEach(function(product){
-
-        let name = product
-            .querySelector("h3")
-            .innerText
-            .toLowerCase();
-
-        if(name.includes(input)){
-
-            product.style.display = "block";
-
-        }else{
-
-            product.style.display = "none";
-
-        }
-
-    });
-
-}
-
-</script>
-
+    <a href="#home" class="back-to-top">↑ Back to Categories</a>
+  </section>
 
 </body>
-
 </html>
