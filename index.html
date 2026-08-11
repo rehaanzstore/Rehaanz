@@ -1,16 +1,266 @@
-body {
-    margin: 0;
-    min-height: 100vh;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Rehaanz Store</title>
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'serif', 'Georgia', Times, serif;
+    }
 
-    background:
-        linear-gradient(rgba(20, 5, 10, 0.75), rgba(20, 5, 10, 0.85)),
-        url("YOUR-BACKGROUND-IMAGE.jpg");
+    body {
+      background-color: #802327; /* Deep Maroon / Burgundy Theme */
+      color: #FFFFFF;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      width: 100%;
+    }
 
-    font-family: Arial, sans-serif;
-    color: white;
-}
+    /* Top Navigation Back Button */
+    .back-btn {
+      display: inline-block;
+      align-self: flex-start;
+      margin-bottom: 20px;
+      background: #000000;
+      color: #802327;
+      padding: 8px 18px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      font-size: 0.9rem;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* Headings */
+    h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      font-weight: 300;
+    }
+
+    .tagline {
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 50px;
+      opacity: 0.9;
+    }
+
+    /* Home Page Layout */
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .category-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 180px;
+    }
+
+    .category-card h2 {
+      font-size: 1.8rem;
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+
+    .btn-explore, .btn-buy {
+      background-color: #000000;
+      color: #802327;
+      border: none;
+      padding: 8px 24px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: opacity 0.2s ease;
+    }
+
+    .btn-explore:hover, .btn-buy:hover {
+      opacity: 0.85;
+    }
+
+    /* Products Grid Layout */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px 30px;
+      margin-top: 30px;
+    }
+
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .product-img-box {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background-color: #FFFFFF;
+      color: #000000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .product-info {
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .rating {
+      color: #FFD700;
+    }
+
+    /* Responsive for Small Screens */
+    @media (max-width: 768px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HOME PAGE SECTION -->
+  <div id="home-page" class="container">
+    <h1>WELCOME TO THE<br>REHAANZ STORE</h1>
+    <p class="tagline">DISCOVER ELEVATED SKINCARE, FASHION & HOME ACCENTS WITH REHAANZ</p>
+
+    <div class="categories-grid">
+      <div class="category-card">
+        <h2>glow hub</h2>
+        <button class="btn-explore" onclick="openCategory('glow-hub')">EXPLORE</button>
+      </div>
+      <div class="category-card">
+        <h2>Women<br>wordrobe</h2>
+        <button class="btn-explore" onclick="openCategory('women-wordrobe')">EXPLORE</button>
+      </div>
+      <div class="category-card">
+        <h2>Accessories<br>zone</h2>
+        <button class="btn-explore" onclick="openCategory('accessories-zone')">EXPLORE</button>
+      </div>
+      <div class="category-card">
+        <h2>Kitchen</h2>
+        <button class="btn-explore" onclick="openCategory('kitchen')">EXPLORE</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY PAGE SECTION (DYNAMIC) -->
+  <div id="category-page" class="container hidden">
+    <button class="back-btn" onclick="goHome()">← BACK TO HOME</button>
+    <h1 id="category-title">CATEGORY TITLE</h1>
+    <p class="tagline" id="category-subtitle">SUBTITLE HERE</p>
+
+    <div class="products-grid" id="products-container">
+      <!-- Products generated via JavaScript -->
+    </div>
+  </div>
+
+  <script>
+    // Data for Categories and Subtitles
+    const categoryData = {
+      'glow-hub': {
+        title: 'GLOW HUB',
+        subtitle: 'TIMELESS ELEGANCE: CURATED ESSENTIALS FOR YOUR GLOW"'
+      },
+      'women-wordrobe': {
+        title: 'WOMEN WORDROBE',
+        subtitle: 'TAILORED PERFECTION: WEARABLE LUXURY FOR EVERY OCCASION'
+      },
+      'accessories-zone': {
+        title: 'ACCESSORIES ZONE',
+        subtitle: 'THE FINISHING TOUCH: DISTINCTIVE ACCENTS THAT DEFINE YOU'
+      },
+      'kitchen': {
+        title: 'KITCHEN',
+        subtitle: 'PREMIUM ESSENTIALS FOR THE HEART OF YOUR HOME'
+      }
+    };
+
+    // Open Selected Category
+    function openCategory(catId) {
+      const data = categoryData[catId];
+      if (!data) return;
+
+      document.getElementById('category-title').innerText = data.title;
+      document.getElementById('category-subtitle').innerText = data.subtitle;
+
+      // Generate 6 dummy product cards matching your wireframe
+      const productsContainer = document.getElementById('products-container');
+      productsContainer.innerHTML = '';
+
+      for (let i = 1; i <= 6; i++) {
+        const cardHtml = `
+          <div class="product-card">
+            <div class="product-img-box">PRODUCT<br>PIC</div>
+            <div class="product-info">
+              Product name<br>
+              rating 4.5 <span class="rating">★</span><br>
+              price- 299Rs
+            </div>
+            <button class="btn-buy">BUY NOW</button>
+          </div>
+        `;
+        productsContainer.innerHTML += cardHtml;
+      }
+
+      // Switch pages
+      document.getElementById('home-page').classList.add('hidden');
+      document.getElementById('category-page').classList.remove('hidden');
+      window.scrollTo(0, 0);
+    }
+
+    // Go back to Main Page
+    function goHome() {
+      document.getElementById('category-page').classList.add('hidden');
+      document.getElementById('home-page').classList.remove('hidden');
+      window.scrollTo(0, 0);
+    }
+  </script>
+</body>
+</html>
