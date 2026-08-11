@@ -1,266 +1,1186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Rehaanz Store</title>
-  <style>
-    /* Global Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'serif', 'Georgia', Times, serif;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>REHAANZ STORE</title>
+
+<style>
+
+/* =========================
+   BASIC SETTINGS
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#8f2d32;
+    color:white;
+    font-family:Georgia, "Times New Roman", serif;
+}
+
+
+/* =========================
+   HOME
+========================= */
+
+#home{
+    min-height:100vh;
+    padding:90px 30px 80px;
+    text-align:center;
+}
+
+.main-title{
+    font-family:"Times New Roman", serif;
+    font-size:clamp(45px,7vw,85px);
+    font-weight:400;
+    line-height:1.25;
+    color:#fff;
+    letter-spacing:2px;
+}
+
+.main-title span{
+    display:block;
+    margin-top:30px;
+}
+
+.tagline{
+    margin:70px auto 0;
+    max-width:850px;
+    font-size:20px;
+    line-height:1.5;
+    color:#000;
+    letter-spacing:1px;
+}
+
+
+/* =========================
+   CATEGORY MENU
+========================= */
+
+.categories{
+    margin-top:160px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:35px;
+    max-width:1250px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.category h2{
+    color:#000;
+    font-size:38px;
+    font-weight:400;
+    line-height:1.15;
+    min-height:90px;
+}
+
+.explore-btn,
+.buy-btn{
+    display:inline-block;
+    margin-top:35px;
+    padding:13px 18px;
+    border-radius:15px;
+    background:#000;
+    color:#9d353b;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:17px;
+    border:none;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.explore-btn:hover,
+.buy-btn:hover{
+    transform:scale(1.08);
+    background:#fff;
+    color:#8f2d32;
+}
+
+
+/* =========================
+   PRODUCT SECTIONS
+========================= */
+
+.shop-section{
+    min-height:100vh;
+    padding:90px 5%;
+    text-align:center;
+}
+
+.section-title{
+    font-size:clamp(50px,7vw,85px);
+    font-weight:400;
+    color:white;
+    letter-spacing:2px;
+}
+
+.section-description{
+    margin:70px auto 60px;
+    color:#000;
+    font-size:21px;
+    letter-spacing:1px;
+    max-width:1000px;
+}
+
+
+/* =========================
+   PRODUCT GRID
+========================= */
+
+.products{
+    max-width:1100px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    column-gap:80px;
+    row-gap:70px;
+}
+
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+.product{
+    text-align:center;
+}
+
+.product-img{
+    width:100%;
+    max-width:300px;
+    height:300px;
+
+    object-fit:contain;
+
+    background:white;
+    display:block;
+    margin:auto;
+}
+
+
+/* Product image nahi ho to placeholder */
+.product-img.placeholder{
+    object-fit:cover;
+    padding:0;
+}
+
+
+.product-name{
+    margin-top:22px;
+    font-family:Arial, sans-serif;
+    font-size:21px;
+    color:white;
+}
+
+.rating{
+    margin-top:7px;
+    font-family:Arial, sans-serif;
+    font-size:20px;
+    color:white;
+}
+
+.price{
+    margin-top:7px;
+    font-family:Arial, sans-serif;
+    font-size:20px;
+    color:white;
+}
+
+.buy-btn{
+    margin-top:15px;
+}
+
+
+/* =========================
+   BACK TO HOME
+========================= */
+
+.back-home{
+    display:inline-block;
+    margin-top:80px;
+    padding:13px 22px;
+    background:#000;
+    color:#9d353b;
+    border-radius:15px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+        gap:60px 20px;
+        margin-top:100px;
     }
 
-    body {
-      background-color: #802327; /* Deep Maroon / Burgundy Theme */
-      color: #FFFFFF;
-      text-align: center;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+    .category h2{
+        font-size:30px;
     }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      width: 100%;
+    .products{
+        grid-template-columns:repeat(2,1fr);
+        column-gap:25px;
+        row-gap:55px;
     }
 
-    /* Top Navigation Back Button */
-    .back-btn {
-      display: inline-block;
-      align-self: flex-start;
-      margin-bottom: 20px;
-      background: #000000;
-      color: #802327;
-      padding: 8px 18px;
-      border-radius: 20px;
-      text-decoration: none;
-      font-weight: bold;
-      cursor: pointer;
-      border: none;
-      font-size: 0.9rem;
+    .product-img{
+        height:240px;
+    }
+}
+
+
+@media(max-width:600px){
+
+    #home{
+        padding:60px 18px;
     }
 
-    .hidden {
-      display: none !important;
+    .main-title{
+        font-size:45px;
     }
 
-    /* Headings */
-    h1 {
-      font-size: 3rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-      font-weight: 300;
+    .tagline{
+        margin-top:55px;
+        font-size:16px;
     }
 
-    .tagline {
-      font-size: 0.85rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 50px;
-      opacity: 0.9;
+    .categories{
+        grid-template-columns:1fr 1fr;
+        margin-top:100px;
+        gap:55px 10px;
     }
 
-    /* Home Page Layout */
-    .categories-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
+    .category h2{
+        font-size:26px;
+        min-height:65px;
     }
 
-    .category-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 180px;
+    .explore-btn{
+        font-size:14px;
+        padding:11px 14px;
+        margin-top:20px;
     }
 
-    .category-card h2 {
-      font-size: 1.8rem;
-      font-weight: 300;
-      margin-bottom: 20px;
+    .shop-section{
+        padding:70px 12px;
     }
 
-    .btn-explore, .btn-buy {
-      background-color: #000000;
-      color: #802327;
-      border: none;
-      padding: 8px 24px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: bold;
-      letter-spacing: 1px;
-      cursor: pointer;
-      text-transform: uppercase;
-      transition: opacity 0.2s ease;
+    .section-title{
+        font-size:48px;
     }
 
-    .btn-explore:hover, .btn-buy:hover {
-      opacity: 0.85;
+    .section-description{
+        margin:45px auto 40px;
+        font-size:16px;
     }
 
-    /* Products Grid Layout */
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px 30px;
-      margin-top: 30px;
+    .products{
+        grid-template-columns:repeat(2,1fr);
+        gap:45px 12px;
     }
 
-    .product-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .product-img{
+        height:170px;
     }
 
-    .product-img-box {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      background-color: #FFFFFF;
-      color: #000000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 1.1rem;
-      letter-spacing: 1px;
-      margin-bottom: 12px;
-      text-align: center;
-      line-height: 1.2;
+    .product-name{
+        font-size:16px;
     }
 
-    .product-info {
-      font-size: 0.95rem;
-      margin-bottom: 8px;
-      line-height: 1.4;
+    .rating,
+    .price{
+        font-size:15px;
     }
 
-    .rating {
-      color: #FFD700;
+    .buy-btn{
+        font-size:14px;
+        padding:10px 13px;
     }
+}
 
-    /* Responsive for Small Screens */
-    @media (max-width: 768px) {
-      .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      h1 {
-        font-size: 2.2rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .products-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+</style>
 </head>
+
+
 <body>
 
-  <!-- HOME PAGE SECTION -->
-  <div id="home-page" class="container">
-    <h1>WELCOME TO THE<br>REHAANZ STORE</h1>
-    <p class="tagline">DISCOVER ELEVATED SKINCARE, FASHION & HOME ACCENTS WITH REHAANZ</p>
 
-    <div class="categories-grid">
-      <div class="category-card">
-        <h2>glow hub</h2>
-        <button class="btn-explore" onclick="openCategory('glow-hub')">EXPLORE</button>
-      </div>
-      <div class="category-card">
-        <h2>Women<br>wordrobe</h2>
-        <button class="btn-explore" onclick="openCategory('women-wordrobe')">EXPLORE</button>
-      </div>
-      <div class="category-card">
-        <h2>Accessories<br>zone</h2>
-        <button class="btn-explore" onclick="openCategory('accessories-zone')">EXPLORE</button>
-      </div>
-      <div class="category-card">
-        <h2>Kitchen</h2>
-        <button class="btn-explore" onclick="openCategory('kitchen')">EXPLORE</button>
-      </div>
+<!-- ==================================================
+                     HOME PAGE
+================================================== -->
+
+<section id="home">
+
+    <h1 class="main-title">
+        WELCOME TO THE
+        <span>REHAANZ STORE</span>
+    </h1>
+
+
+    <p class="tagline">
+        DISCOVER ELEVATED SKINCARE, FASHION & HOME
+        <br>
+        ACCENTS WITH REHAANZ
+    </p>
+
+
+    <!-- CATEGORY MENU -->
+
+    <div class="categories">
+
+        <!-- GLOW HUB -->
+
+        <div class="category">
+
+            <h2>
+                Glow Hub
+            </h2>
+
+            <a href="#glow-hub" class="explore-btn">
+                EXPLORE
+            </a>
+
+        </div>
+
+
+        <!-- WOMEN -->
+
+        <div class="category">
+
+            <h2>
+                Women<br>
+                Wardrobe
+            </h2>
+
+            <a href="#women-wardrobe" class="explore-btn">
+                EXPLORE
+            </a>
+
+        </div>
+
+
+        <!-- ACCESSORIES -->
+
+        <div class="category">
+
+            <h2>
+                Accessories<br>
+                Zone
+            </h2>
+
+            <a href="#accessories" class="explore-btn">
+                EXPLORE
+            </a>
+
+        </div>
+
+
+        <!-- KITCHEN -->
+
+        <div class="category">
+
+            <h2>
+                Kitchen
+            </h2>
+
+            <a href="#kitchen" class="explore-btn">
+                EXPLORE
+            </a>
+
+        </div>
+
     </div>
-  </div>
 
-  <!-- CATEGORY PAGE SECTION (DYNAMIC) -->
-  <div id="category-page" class="container hidden">
-    <button class="back-btn" onclick="goHome()">← BACK TO HOME</button>
-    <h1 id="category-title">CATEGORY TITLE</h1>
-    <p class="tagline" id="category-subtitle">SUBTITLE HERE</p>
+</section>
 
-    <div class="products-grid" id="products-container">
-      <!-- Products generated via JavaScript -->
-    </div>
-  </div>
 
-  <script>
-    // Data for Categories and Subtitles
-    const categoryData = {
-      'glow-hub': {
-        title: 'GLOW HUB',
-        subtitle: 'TIMELESS ELEGANCE: CURATED ESSENTIALS FOR YOUR GLOW"'
-      },
-      'women-wordrobe': {
-        title: 'WOMEN WORDROBE',
-        subtitle: 'TAILORED PERFECTION: WEARABLE LUXURY FOR EVERY OCCASION'
-      },
-      'accessories-zone': {
-        title: 'ACCESSORIES ZONE',
-        subtitle: 'THE FINISHING TOUCH: DISTINCTIVE ACCENTS THAT DEFINE YOU'
-      },
-      'kitchen': {
-        title: 'KITCHEN',
-        subtitle: 'PREMIUM ESSENTIALS FOR THE HEART OF YOUR HOME'
-      }
-    };
 
-    // Open Selected Category
-    function openCategory(catId) {
-      const data = categoryData[catId];
-      if (!data) return;
+<!-- ==================================================
+                     GLOW HUB
+================================================== -->
 
-      document.getElementById('category-title').innerText = data.title;
-      document.getElementById('category-subtitle').innerText = data.subtitle;
+<section id="glow-hub" class="shop-section">
 
-      // Generate 6 dummy product cards matching your wireframe
-      const productsContainer = document.getElementById('products-container');
-      productsContainer.innerHTML = '';
+    <h1 class="section-title">
+        GLOW HUB
+    </h1>
 
-      for (let i = 1; i <= 6; i++) {
-        const cardHtml = `
-          <div class="product-card">
-            <div class="product-img-box">PRODUCT<br>PIC</div>
-            <div class="product-info">
-              Product name<br>
-              rating 4.5 <span class="rating">★</span><br>
-              price- 299Rs
+    <p class="section-description">
+        TIMELESS ELEGANCE: CURATED ESSENTIALS FOR YOUR GLOW
+    </p>
+
+
+    <div class="products">
+
+
+        <!-- PRODUCT 1 -->
+
+        <div class="product">
+
+            <img
+                src="https://via.placeholder.com/300"
+                class="product-img"
+                alt="Glow Hub Product">
+
+            <div class="product-name">
+                Product Name 1
             </div>
-            <button class="btn-buy">BUY NOW</button>
-          </div>
-        `;
-        productsContainer.innerHTML += cardHtml;
-      }
 
-      // Switch pages
-      document.getElementById('home-page').classList.add('hidden');
-      document.getElementById('category-page').classList.remove('hidden');
-      window.scrollTo(0, 0);
-    }
+            <div class="rating">
+                Rating 4.5 ⭐
+            </div>
 
-    // Go back to Main Page
-    function goHome() {
-      document.getElementById('category-page').classList.add('hidden');
-      document.getElementById('home-page').classList.remove('hidden');
-      window.scrollTo(0, 0);
-    }
-  </script>
-</body>
-</html>
+            <div class="price">
+                Price - ₹299
+            </div>
+
+            <a
+                href="YOUR-AFFILIATE-LINK-1"
+                target="_blank"
+                class="buy-btn">
+                BUY NOW
+            </a>
+
+        </div>
+
+
+        <!-- PRODUCT 2 -->
+
+        <div class="product">
+
+            <img
+                src="https://via.placeholder.com/300"
+                class="product-img"
+                alt="Glow Hub Product">
+
+            <div class="product-name">
+                Product Name 2
+            </div>
+
+            <div class="rating">
+                Rating 4.5 ⭐
+            </div>
+
+            <div class="price">
+                Price - ₹299
+            </div>
+
+            <a
+                href="YOUR-AFFILIATE-LINK-2"
+                target="_blank"
+                class="buy-btn">
+                BUY NOW
+            </a>
+
+        </div>
+
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product">
+
+            <img
+                src="https://via.placeholder.com/300"
+                class="product-img"
+                alt="Glow Hub Product">
+
+            <div class="product-name">
+                Product Name 3
+            </div>
+
+            <div class="rating">
+                Rating 4.5 ⭐
+            </div>
+
+            <div class="price">
+                Price - ₹299
+            </div>
+
+            <a
+                href="YOUR-AFFILIATE-LINK-3"
+                target="_blank"
+                class="buy-btn">
+                BUY NOW
+            </a>
+
+        </div>
+
+
+        <!-- PRODUCT 4 -->
+
+        <div class="product">
+
+            <img
+                src="https://via.placeholder.com/300"
+                class="product-img"
+                alt="Glow Hub Product">
+
+            <div class="product-name">
+                Product Name 4
+            </div>
+
+            <div class="rating">
+                Rating 4.5 ⭐
+            </div>
+
+            <div class="price">
+                Price - ₹299
+            </div>
+
+            <a
+                href="YOUR-AFFILIATE-LINK-4"
+                target="_blank"
+                class="buy-btn">
+                BUY NOW
+            </a>
+
+        </div>
+
+
+        <!-- PRODUCT 5 -->
+
+        <div class="product">
+
+            <img
+                src="https://via.placeholder.com/300"
+                class="product-img"
+                alt="Glow Hub Product">
+
+            <div class="product-name">
+                Product Name 5
+            </div>
+
+            <div class="rating">
+                Rating 4.5 ⭐
+            </div>
+
+            <div class="price">
+                Price - ₹299
+            </div>
+
+            <a
+                href="YOUR-AFFILIATE-LINK-5"
+                target="_blank"
+                class="buy-btn">
+                BUY NOW
+            </a>
+
+        </div>
+
+
+        <!-- PRODUCT 6 -->
+
+        <div class="product">
+
+            <img
+                src="https://via.placeholder.com/300"
+                class="product-img"
+                alt="Glow Hub Product">
+
+            <div class="product-name">
+                Product Name 6
+            </div>
+
+            <div class="rating">
+                Rating 4.5 ⭐
+            </div>
+
+            <div class="price">
+                Price - ₹299
+            </div>
+
+            <a
+                href="YOUR-AFFILIATE-LINK-6"
+                target="_blank"
+                class="buy-btn">
+                BUY NOW
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <a href="#home" class="back-home">
+        BACK TO HOME
+    </a>
+
+</section>
+
+
+
+<!-- ==================================================
+                  WOMEN WARDROBE
+================================================== -->
+
+<section id="women-wardrobe" class="shop-section">
+
+    <h1 class="section-title">
+        WOMEN WARDROBE
+    </h1>
+
+    <p class="section-description">
+        TAILORED PERFECTION: WEARABLE LUXURY FOR EVERY OCCASION
+    </p>
+
+
+    <div class="products">
+
+        <!-- PRODUCT 1 -->
+
+        <div class="product">
+
+            <img
+                src="https://via.placeholder.com/300"
+                class="product-img"
+                alt="Women Product">
+
+            <div class="product-name">
+                Women Product 1
+            </div>
+
+            <div class="rating">
+                Rating 4.5 ⭐
+            </div>
+
+            <div class="price">
+                Price - ₹299
+            </div>
+
+            <a
+                href="YOUR-AFFILIATE-LINK"
+                target="_blank"
+                class="buy-btn">
+                BUY NOW
+            </a>
+
+        </div>
+
+
+        <!-- PRODUCT 2 -->
+
+        <div class="product">
+
+            <img
+                src="https://via.placeholder.com/300"
+                class="product-img"
+                alt="Women Product">
+
+            <div class="product-name">
+                Women Product 2
+            </div>
+
+            <div class="rating">
+                Rating 4.5 ⭐
+            </div>
+
+            <div class="price">
+                Price - ₹299
+            </div>
+
+            <a
+                href="YOUR-AFFILIATE-LINK"
+                target="_blank"
+                class="buy-btn">
+                BUY NOW
+            </a>
+
+        </div>
+
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product">
+
+            <img
+                src="https://via.placeholder.com/300"
+                class="product-img"
+                alt="Women Product">
+
+            <div class="product-name">
+                Women Product 3
+            </div>
+
+            <div class="rating">
+                Rating 4.5 ⭐
+            </div>
+
+            <div class="price">
+                Price - ₹299
+            </div>
+
+            <a
+                href="YOUR-AFFILIATE-LINK"
+                target="_blank"
+                class="buy-btn">
+                BUY NOW
+            </a>
+
+        </div>
+
+
+        <!-- PRODUCT 4 -->
+
+        <div class="product">
+
+            <img
+                src="https://via.placeholder.com/300"
+                class="product-img"
+                alt="Women Product">
+
+            <div class="product-name">
+                Women Product 4
+            </div>
+
+            <div class="rating">
+                Rating 4.5 ⭐
+            </div>
+
+            <div class="price">
+                Price - ₹299
+            </div>
+
+            <a
+                href="YOUR-AFFILIATE-LINK"
+                target="_blank"
+                class="buy-btn">
+                BUY NOW
+            </a>
+
+        </div>
+
+
+        <!-- PRODUCT 5 -->
+
+        <div class="product">
+
+            <img
+                src="https://via.placeholder.com/300"
+                class="product-img"
+                alt="Women Product">
+
+            <div class="product-name">
+                Women Product 5
+            </div>
+
+            <div class="rating">
+                Rating 4.5 ⭐
+            </div>
+
+            <div class="price">
+                Price - ₹299
+            </div>
+
+            <a
+                href="YOUR-AFFILIATE-LINK"
+                target="_blank"
+                class="buy-btn">
+                BUY NOW
+            </a>
+
+        </div>
+
+
+        <!-- PRODUCT 6 -->
+
+        <div class="product">
+
+            <img
+                src="https://via.placeholder.com/300"
+                class="product-img"
+                alt="Women Product">
+
+            <div class="product-name">
+                Women Product 6
+            </div>
+
+            <div class="rating">
+                Rating 4.5 ⭐
+            </div>
+
+            <div class="price">
+                Price - ₹299
+            </div>
+
+            <a
+                href="YOUR-AFFILIATE-LINK"
+                target="_blank"
+                class="buy-btn">
+                BUY NOW
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <a href="#home" class="back-home">
+        BACK TO HOME
+    </a>
+
+</section>
+
+
+
+<!-- ==================================================
+                    ACCESSORIES
+================================================== -->
+
+<section id="accessories" class="shop-section">
+
+    <h1 class="section-title">
+        ACCESSORIES ZONE
+    </h1>
+
+    <p class="section-description">
+        THE FINISHING TOUCH: DISTINCTIVE ACCENTS THAT DEFINE YOU
+    </p>
+
+
+    <div class="products">
+
+        <!-- 6 PRODUCTS -->
+
+        <div class="product">
+            <img src="https://via.placeholder.com/300"
+                 class="product-img"
+                 alt="Accessory">
+
+            <div class="product-name">Accessory 1</div>
+            <div class="rating">Rating 4.5 ⭐</div>
+            <div class="price">Price - ₹299</div>
+
+            <a href="YOUR-AFFILIATE-LINK"
+               target="_blank"
+               class="buy-btn">
+               BUY NOW
+            </a>
+        </div>
+
+
+        <div class="product">
+            <img src="https://via.placeholder.com/300"
+                 class="product-img"
+                 alt="Accessory">
+
+            <div class="product-name">Accessory 2</div>
+            <div class="rating">Rating 4.5 ⭐</div>
+            <div class="price">Price - ₹299</div>
+
+            <a href="YOUR-AFFILIATE-LINK"
+               target="_blank"
+               class="buy-btn">
+               BUY NOW
+            </a>
+        </div>
+
+
+        <div class="product">
+            <img src="https://via.placeholder.com/300"
+                 class="product-img"
+                 alt="Accessory">
+
+            <div class="product-name">Accessory 3</div>
+            <div class="rating">Rating 4.5 ⭐</div>
+            <div class="price">Price - ₹299</div>
+
+            <a href="YOUR-AFFILIATE-LINK"
+               target="_blank"
+               class="buy-btn">
+               BUY NOW
+            </a>
+        </div>
+
+
+        <div class="product">
+            <img src="https://via.placeholder.com/300"
+                 class="product-img"
+                 alt="Accessory">
+
+            <div class="product-name">Accessory 4</div>
+            <div class="rating">Rating 4.5 ⭐</div>
+            <div class="price">Price - ₹299</div>
+
+            <a href="YOUR-AFFILIATE-LINK"
+               target="_blank"
+               class="buy-btn">
+               BUY NOW
+            </a>
+        </div>
+
+
+        <div class="product">
+            <img src="https://via.placeholder.com/300"
+                 class="product-img"
+                 alt="Accessory">
+
+            <div class="product-name">Accessory 5</div>
+            <div class="rating">Rating 4.5 ⭐</div>
+            <div class="price">Price - ₹299</div>
+
+            <a href="YOUR-AFFILIATE-LINK"
+               target="_blank"
+               class="buy-btn">
+               BUY NOW
+            </a>
+        </div>
+
+
+        <div class="product">
+            <img src="https://via.placeholder.com/300"
+                 class="product-img"
+                 alt="Accessory">
+
+            <div class="product-name">Accessory 6</div>
+            <div class="rating">Rating 4.5 ⭐</div>
+            <div class="price">Price - ₹299</div>
+
+            <a href="YOUR-AFFILIATE-LINK"
+               target="_blank"
+               class="buy-btn">
+               BUY NOW
+            </a>
+        </div>
+
+    </div>
+
+
+    <a href="#home" class="back-home">
+        BACK TO HOME
+    </a>
+
+</section>
+
+
+<!-- ==================================================
+                      KITCHEN
+================================================== -->
+
+<section id="kitchen" class="shop-section">
+
+    <h1 class="section-title">
+        KITCHEN
+    </h1>
+
+    <p class="section-description">
+        PREMIUM ESSENTIALS FOR THE HEART OF YOUR HOME
+    </p>
+
+
+    <div class="products">
+
+
+        <!-- PRODUCT 1 -->
+
+        <div class="product">
+
+            <img
+                src="https://via.placeholder.com/300"
+                class="product-img"
+                alt="Kitchen Product 1">
+
+            <div class="product-name">
+                Kitchen Product 1
+            </div>
+
+            <div class="rating">
+                Rating 4.5 ⭐
+            </div>
+
+            <div class="price">
+                Price - ₹299
+            </div>
+
+            <a
+                href="YOUR-AFFILIATE-LINK-1"
+                target="_blank"
+                class="buy-btn">
+                BUY NOW
+            </a>
+
+        </div>
+
+
+        <!-- PRODUCT 2 -->
+
+        <div class="product">
+
+            <img
+                src="https://via.placeholder.com/300"
+                class="product-img"
+                alt="Kitchen Product 2">
+
+            <div class="product-name">
+                Kitchen Product 2
+            </div>
+
+            <div class="rating">
+                Rating 4.5 ⭐
+            </div>
+
+            <div class="price">
+                Price - ₹299
+            </div>
+
+            <a
+                href="YOUR-AFFILIATE-LINK-2"
+                target="_blank"
+                class="buy-btn">
+                BUY NOW
+            </a>
+
+        </div>
+
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product">
+
+            <img
+                src="https://via.placeholder.com/300"
+                class="product-img"
+                alt="Kitchen Product 3">
+
+            <div class="product-name">
+                Kitchen Product 3
+            </div>
+
+            <div class="rating">
+                Rating 4.5 ⭐
+            </div>
+
+            <div class="price">
+                Price - ₹299
+            </div>
+
+            <a
+                href="YOUR-AFFILIATE-LINK-3"
+                target="_blank"
+                class="buy-btn">
+                BUY NOW
+            </a>
+
+        </div>
+
+
+        <!-- PRODUCT 4 -->
+
+        <div class="product">
+
+            <img
+                src="https://via.placeholder.com/300"
+                class="product-img"
+                alt="Kitchen Product 4">
+
+            <div class="product-name">
+                Kitchen Product 4
+            </div>
+
+            <div class="rating">
+                Rating 4.5 ⭐
+            </div>
+
+            <div class="price">
+                Price - ₹299
+            </div>
+
+            <a
+                href="YOUR-AFFILIATE-LINK-4"
+                target="_blank"
+                class="buy-btn">
+                BUY NOW
+            </a>
+
+        </div>
+
+
+        <!-- PRODUCT 5 -->
+
+        <div class="product">
+
+            <img
+                src="https://via.placeholder.com/300"
+                class="product-img"
+                alt="Kitchen Product 5">
+
+            <div class="product-name">
+                Kitchen Product 5
+            </div>
+
+            <div class="rating">
+                Rating 4.5 ⭐
+            </div>
+
+            <div class="price">
+                Price - ₹299
+            </div>
+
+            <a
+                href="YOUR-AFFILIATE-LINK-5"
+                target="_blank"
+                class="buy-btn">
+                BUY NOW
+            </a>
+
+        </div>
+
+
+        <!-- PRODUCT 6 -->
+
+        <div class="product">
+
+            <img
+                src="https://via.placeholder.com/300"
+                class="product-img"
+                alt="Kitchen Product 6">
+
+            <div class="product-name">
+                Kitchen Product 6
+            </div>
+
+            <div class="rating">
+                Rating 4.5 ⭐
+            </div>
+
+            <div class="price">
+                Price - ₹299
+            </div>
+
+            <a
+                href="YOUR-AFFILIATE-LINK-6"
+                target="_blank"
+                class="buy-btn">
+                BUY NOW
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- BACK TO HOME -->
+
+    <a href="#home" class="back-home">
+        BACK TO HOME
+    </a>
+
+</section>
