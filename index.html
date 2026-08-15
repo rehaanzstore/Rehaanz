@@ -3109,3 +3109,32 @@ Bella Vita Luxury Date Long Lasting | Perfume
     </a>
 
 </section>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const searchInput = document.getElementById("searchInput");
+
+    searchInput.addEventListener("input", function () {
+
+        const searchText = this.value.toLowerCase().trim();
+        const products = document.querySelectorAll(".product");
+
+        products.forEach(function (product) {
+
+            const productName = product.querySelector(".product-name");
+
+            if (!productName) return;
+
+            const name = productName.textContent.toLowerCase();
+
+            if (searchText === "" || name.includes(searchText)) {
+                product.style.display = "";
+            } else {
+                product.style.display = "none";
+            }
+
+        });
+    });
+
+});
+</script>
