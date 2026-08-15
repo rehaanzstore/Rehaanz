@@ -3114,26 +3114,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const searchInput = document.getElementById("searchInput");
 
-    searchInput.addEventListener("input", function () {
+    searchInput.addEventListener("keydown", function (event) {
 
-        const searchText = this.value.toLowerCase().trim();
-        const products = document.querySelectorAll(".product");
+        if (event.key === "Enter") {
 
-        products.forEach(function (product) {
+            const searchText = this.value.toLowerCase().trim();
+            const products = document.querySelectorAll(".product");
 
-            const productName = product.querySelector(".product-name");
+            for (let product of products) {
 
-            if (!productName) return;
+                const productName = product.querySelector(".product-name");
 
-            const name = productName.textContent.toLowerCase();
+                if (productName) {
 
-            if (searchText === "" || name.includes(searchText)) {
-                product.style.display = "";
-            } else {
-                product.style.display = "none";
+                    const name = productName.textContent.toLowerCase();
+
+                    if (name.includes(searchText)) {
+
+                        product.scrollIntoView({
+                            behavior: "smooth",
+                            block: "center"
+                        });
+
+                        break;
+                    }
+                }
             }
-
-        });
+        }
     });
 
 });
