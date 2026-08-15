@@ -320,28 +320,7 @@ body{
 }
 
 </style>
-.search-container {
-    width: 90%;
-    max-width: 600px;
-    margin: 25px auto;
-    position: relative;
-}
 
-#searchInput {
-    width: 100%;
-    padding: 14px 50px 14px 20px;
-    border: 1px solid #ddd;
-    border-radius: 30px;
-    font-size: 16px;
-    outline: none;
-}
-
-.search-container span {
-    position: absolute;
-    right: 18px;
-    top: 10px;
-    font-size: 20px;
-}
 </head>
 
 
@@ -3130,21 +3109,3 @@ Bella Vita Luxury Date Long Lasting | Perfume
     </a>
 
 </section>
-<script>
-function searchProducts() {
-    let search = document.getElementById("searchInput").value.toLowerCase();
-    let products = document.querySelectorAll(".product");
-
-    products.forEach(function(product) {
-        let name = product.querySelector(".product-name");
-
-        if (name && name.textContent.toLowerCase().includes(search)) {
-            product.style.display = "";
-        } else {
-            product.style.display = "none";
-        }
-    });
-}
-
-document.getElementById("searchInput").addEventListener("input", searchProducts);
-</script>
